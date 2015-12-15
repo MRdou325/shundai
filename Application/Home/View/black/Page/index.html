@@ -1,0 +1,36 @@
+<extend name="Public/base"/>
+
+<block name="body">
+
+	 <link href="__NEW_CSS__/list.css" rel="stylesheet">
+	 <link rel="stylesheet" type="text/css" href="__NEW_CSS__/login.css">
+	 <div class="box">
+	 	<div class="col-md-3">
+	 		<include file="Public:categorygoods_list" />
+	 	</div>
+	 	<div class="col-md-9">
+	 		<div class="login-content" style="margin-top:20px;">
+	 		<php>if($id){</php>
+            	<div class="title">
+            		{$page.name}
+            	</div>
+            	<div class="login-center" style="width:100%">
+                	<div class="fl">
+	 					{$page.content}
+	 				</div>
+	 			</div>
+	 		<php>}else{</php>
+            	<div class="login-center">
+            		<volist name="page" id="page">
+                	<div class="content-landing fl">
+	 					<a href="{:U('Page/index',array('id'=>$page['id']))}" title="{$page.name}">{$page.name}</a>
+	 				</div>
+	 				</volist>
+	 			</div>
+	 		<php>}</php>
+	 		</div>
+	 	</div>
+	 	<div class="clear"></div>
+      </div>
+	 
+</block>

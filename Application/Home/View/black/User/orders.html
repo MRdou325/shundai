@@ -1,0 +1,95 @@
+<extend name="Public/base"/>
+<block name="head">
+	 <link rel="stylesheet" type="text/css" href="__NEW_CSS__/login.css">
+	 <link rel="stylesheet" type="text/css" href="__NEW_CSS__/list.css">
+</block>
+<block name="body">
+<div class="container user-center">
+    <div class="row">
+        <div class="col-md-2">
+            <include file="Public:usernav"/>
+        </div>
+        <div class="col-md-10">
+        	<div class="list790">
+		        <h3>我的订单</h3>
+		        <div class="tag_con" id="js_tag_con">                                                                        
+		            <div class="tu_wen">
+		                <ul>
+		                    <volist name="orders" id="goods">
+		                    <php>if($goods["goods_type"] == 1){</php>
+		                    <li>
+		                        <div class="pic">
+		                            <a href="{:U('Goods/info',array('id'=> $goods["goods_id"]))}" target="_blank" title="{$goods.title}">
+		                                <img src="{$goods['pic_url']}" border="0" alt="{$goods.title}" width="75" height="50" original="{$goods['pic_url']}" style="display: block;">
+		                            </a>
+		                        </div>
+		                        <div class="type">
+		                            [品质游]<a href="{:U('Goods/info',array('id'=> $goods["goods_id"]))}" target="_blank">{$goods.title}</a>                
+		                            <p>
+		                                <span>出发城市：{$goods.city}</span>
+		                                <span>行程天数：{$goods.days}</span>
+		                                <span>交通方式：{$goods.traffic} &nbsp;&nbsp;<a href="{:U('Goods/info',array('id'=> $goods["goods_id"]))}">更多</a></span>
+		                            </p>
+		                        </div>
+		                        <div class="price"><em><b>￥</b><php>if($goods['discount_price'] > 0){</php>{$goods.discount_price}<php>}else{</php>{$goods.price}<php>}</php></em>起</div>
+		                    <php>}else{</php>
+		                    <li class="rooms fn-clear">
+		                        <div class="room-top">
+		                            <div class="pic">
+		                                <a href="{:U('Goods/info',array('id'=> $goods["goods_id"]))}" target="_blank" title="{$goods.title}">
+		                                    <img src="{$goods['pic_url']}" width="165" height="110" alt="{$goods.title}" original="{$goods['pic_url']}" style="display: block;">
+		                                </a>
+		                            </div>
+		                            <div class="basic">
+		                                <strong><a href="{:U('Goods/info',array('id'=> $goods["goods_id"]))}" target="_blank" title="{$goods.title}">{$goods.title}</a></strong>
+		                                <p>办理时间：{$goods.days}天 有效期：{$goods.aheaddays}天 最多停留：{$goods.maxdays}天</p>
+		                                <p>签证面试：<php>if($goods['audition']==2){</php>不<php>}</php>需要 邀请函：<php>if($goods['invite']==2){</php>不<php>}</php>需要 受理范围：{$goods.city}</p>
+		                            </div>
+		                            <div class="clear"></div>
+		                        </div>
+		                        <div>
+		                        <ul>
+		                            <li class="type">
+		                                <span class="w1">价格类型</span>
+		                                <span>门市价</span>
+		                                <span>优惠价</span>
+		                                <span>服务备注</span>
+		                                <span class="btn">&nbsp;</span>
+		                            </li>
+		                                <li id="20691_0">
+		                                <span class="w1"><b>{$goods.title}</b></span>
+		                                <span class="ms">￥{$goods.price}</span>
+		                                <span class="xx">￥{$goods.discount_price}</span>
+		                                <span title="办理入金证费用及服务费">{$goods.title}</span>
+		                                <span class="btn"></span>
+		                            </li>
+		                        </ul>
+		                        </div>
+		                        <php>}</php>
+		                    </li>
+		                    </volist>
+		                </ul>
+		            </div>
+		        </div>
+		    </div>
+        <div class="pagination clear">
+            
+        </div>
+    </div>
+  </div>
+  </div>
+    <script>
+    $("img.lazy").lazyload({threshold:0,failure_limit:30,placeholder : "__IMG__/blank.png",});
+    
+    $(".goods-list li").hover(
+    function(){
+       //当鼠标放上去的时候,程序处理
+       $(this).addClass("hover1 hover");
+    },
+    function(){
+       //当鼠标离开的时候,程序处理
+       $(this).removeClass("hover1 hover");
+    });	
+
+</script>
+</block>

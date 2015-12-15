@@ -1,0 +1,1190 @@
+[ 2015-08-12T19:35:26+08:00 ] ::1 /ke361/index.php?s=/Admin/Goods/index.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Goods/index%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.004000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=131 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 131 )  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 131 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '商品' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '采集' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '分类' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: where D:\xampp\htdocs\KE361\Application\Admin\Controller\GoodsController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `wu_goods` [ RunTime:0.005000s ]
+NOTIC: [8] Undefined index: where D:\xampp\htdocs\KE361\Application\Admin\Controller\AdminController.class.php 第 435 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `wu_goods` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `goods_id`,`num_iid`,`title`,`cate_id`,`tid`,`goods_type`,`provcity`,`nick`,`add_id`,`add_uname`,`seller_credit`,`discount_price`,`price`,`volume`,`comment_count`,`pic_url`,`item_url`,`click_url`,`shop_url`,`sclick_url`,`item_body`,`status`,`seo_title`,`seo_keywords`,`seo_description`,`ctime`,`hits`,`favor`,`sort` FROM `wu_goods` ORDER BY sort desc , goods_id desc LIMIT 0,10   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `wu_category_goods` [ RunTime:0.005001s ]
+NOTIC: [8] Undefined variable: where D:\xampp\htdocs\KE361\Application\Admin\Model\CategoryGoodsModel.class.php 第 13 行.
+SQL: SELECT * FROM `wu_category_goods` WHERE (  status='1' ) ORDER BY p_id,sort  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: meta_title D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 5 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.052003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-08-12T19:35:27+08:00 ] ::1 /ke361/index.php?s=/Admin/CategoryGoods/add.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%CategoryGoods/add%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=139 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=131 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 131 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 131 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '商品' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '采集' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '分类' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: meta_title D:\xampp\htdocs\KE361\Runtime\Cache\Admin\09366e450127c813342b845e265bb907.php 第 5 行.
+NOTIC: [8] Undefined variable: category D:\xampp\htdocs\KE361\Runtime\Cache\Admin\09366e450127c813342b845e265bb907.php 第 110 行.
+NOTIC: [8] Undefined variable: category D:\xampp\htdocs\KE361\Runtime\Cache\Admin\09366e450127c813342b845e265bb907.php 第 115 行.
+NOTIC: [8] Undefined variable: category D:\xampp\htdocs\KE361\Runtime\Cache\Admin\09366e450127c813342b845e265bb907.php 第 123 行.
+NOTIC: [8] Undefined variable: category D:\xampp\htdocs\KE361\Runtime\Cache\Admin\09366e450127c813342b845e265bb907.php 第 130 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.022001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-08-12T19:35:30+08:00 ] ::1 /ke361/index.php?s=/Admin/CategoryGoods/index.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%CategoryGoods/index%' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=135 ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=131 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 131 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 131 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '商品' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '采集' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '分类' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `wu_category_goods` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `wu_category_goods` WHERE ( `p_id` = 0 ) ORDER BY `sort` desc,id desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: meta_title D:\xampp\htdocs\KE361\Runtime\Cache\Admin\74b89b1c5260d3f6e7b43b8778381a58.php 第 5 行.
+NOTIC: [8] Undefined index: sort_id D:\xampp\htdocs\KE361\Runtime\Cache\Admin\74b89b1c5260d3f6e7b43b8778381a58.php 第 126 行.
+NOTIC: [8] Undefined index: sort_id D:\xampp\htdocs\KE361\Runtime\Cache\Admin\74b89b1c5260d3f6e7b43b8778381a58.php 第 126 行.
+NOTIC: [8] Undefined index: sort_id D:\xampp\htdocs\KE361\Runtime\Cache\Admin\74b89b1c5260d3f6e7b43b8778381a58.php 第 126 行.
+NOTIC: [8] Undefined index: sort_id D:\xampp\htdocs\KE361\Runtime\Cache\Admin\74b89b1c5260d3f6e7b43b8778381a58.php 第 126 行.
+NOTIC: [8] Undefined index: sort_id D:\xampp\htdocs\KE361\Runtime\Cache\Admin\74b89b1c5260d3f6e7b43b8778381a58.php 第 126 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.032002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-08-12T19:35:51+08:00 ] ::1 /ke361/index.php?s=/Admin/Goods/index.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001001s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Goods/index%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.004000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=131 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 131 )  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 131 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '商品' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '采集' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '分类' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: where D:\xampp\htdocs\KE361\Application\Admin\Controller\GoodsController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `wu_goods` [ RunTime:0.005000s ]
+NOTIC: [8] Undefined index: where D:\xampp\htdocs\KE361\Application\Admin\Controller\AdminController.class.php 第 435 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `wu_goods` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `goods_id`,`num_iid`,`title`,`cate_id`,`tid`,`goods_type`,`provcity`,`nick`,`add_id`,`add_uname`,`seller_credit`,`discount_price`,`price`,`volume`,`comment_count`,`pic_url`,`item_url`,`click_url`,`shop_url`,`sclick_url`,`item_body`,`status`,`seo_title`,`seo_keywords`,`seo_description`,`ctime`,`hits`,`favor`,`sort` FROM `wu_goods` ORDER BY sort desc , goods_id desc LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_category_goods` [ RunTime:0.004000s ]
+NOTIC: [8] Undefined variable: where D:\xampp\htdocs\KE361\Application\Admin\Model\CategoryGoodsModel.class.php 第 13 行.
+SQL: SELECT * FROM `wu_category_goods` WHERE (  status='1' ) ORDER BY p_id,sort  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: meta_title D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 5 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-08-12T19:38:17+08:00 ] ::1 /ke361/index.php?s=/Admin/Index/index.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Index/index%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.005001s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 1 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 1 ) AND ( `hide` = 0 )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ AdminIndex ] --START--
+SQL: SHOW COLUMNS FROM `wu_addons` [ RunTime:0.005000s ]
+SQL: SELECT `config` FROM `wu_addons` WHERE ( `name` = 'SiteStat' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `wu_member` [ RunTime:0.006001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wu_member` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `wu_action_log` [ RunTime:0.004000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wu_action_log` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_document` [ RunTime:0.006001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wu_document` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `wu_category` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wu_category` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `wu_model` [ RunTime:0.006000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wu_model` LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.125007s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run SiteStat [ RunTime:0.111006s ]
+SQL: SELECT `config` FROM `wu_addons` WHERE ( `name` = 'SystemInfo' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.247014s ]
+SQL: select version() as v; [ RunTime:0.024002s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.028002s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.118007s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.146009s ]
+INFO: Run SystemInfo [ RunTime:0.145009s ]
+INFO: [ AdminIndex ] --END-- [ RunTime:0.256015s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.029002s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.118007s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.147009s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-08-12T19:38:37+08:00 ] ::1 /ke361/index.php?s=/Admin/User/index.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%User/index%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 16 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 16 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '用户管理' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '行为管理' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_member` [ RunTime:0.003000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wu_member` WHERE ( `status` >= 0 ) AND ( `nickname` LIKE '%%' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `uid`,`nickname`,`avatar`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `wu_member` WHERE ( `status` >= 0 ) AND ( `nickname` LIKE '%%' ) ORDER BY uid desc LIMIT 0,10   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-08-12T19:38:38+08:00 ] ::1 /ke361/index.php?s=/Admin/Config/group.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Config/group%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.003000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 68 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_config` [ RunTime:0.003000s ]
+SQL: SELECT `id`,`name`,`title`,`extra`,`value`,`remark`,`type` FROM `wu_config` WHERE ( `status` = 1 ) AND ( `group` = 1 ) ORDER BY sort  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-08-12T19:38:40+08:00 ] ::1 /ke361/index.php?s=/Admin/Addons/index.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Addons/index%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.004000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=43 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 43 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 43 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '扩展' ) AND ( `pid` = 43 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`name`,`title`,`description`,`status`,`config`,`author`,`version`,`create_time`,`has_adminlist` FROM `wu_addons` WHERE ( `name` IN ('Attachment','Editor','EditorForAdmin','SiteStat','SocialComment','SystemInfo') )  [ RunTime:0.089005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `wu_addons` [ RunTime:0.005001s ]
+SQL: SELECT `config` FROM `wu_addons` WHERE ( `name` = 'Attachment' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `config` FROM `wu_addons` WHERE ( `name` = 'SocialComment' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `config` FROM `wu_addons` WHERE ( `name` = 'Editor' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `config` FROM `wu_addons` WHERE ( `name` = 'SystemInfo' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `config` FROM `wu_addons` WHERE ( `name` = 'SiteStat' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `config` FROM `wu_addons` WHERE ( `name` = 'EditorForAdmin' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.489028s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.489028s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-08-12T19:38:42+08:00 ] ::1 /ke361/index.php?s=/Admin/Config/group.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Config/group%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.004000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 68 )  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `wu_config` [ RunTime:0.005000s ]
+SQL: SELECT `id`,`name`,`title`,`extra`,`value`,`remark`,`type` FROM `wu_config` WHERE ( `status` = 1 ) AND ( `group` = 1 ) ORDER BY sort  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.025001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-08-12T19:38:49+08:00 ] ::1 /ke361/index.php?s=/Admin/User/index.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%User/index%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=16 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 16 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 16 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '用户管理' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '行为管理' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_member` [ RunTime:0.003000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wu_member` WHERE ( `status` >= 0 ) AND ( `nickname` LIKE '%%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `uid`,`nickname`,`avatar`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `wu_member` WHERE ( `status` >= 0 ) AND ( `nickname` LIKE '%%' ) ORDER BY uid desc LIMIT 0,10   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-08-12T19:38:51+08:00 ] ::1 /ke361/index.php?s=/Admin/Action/actionlog.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Action/actionlog%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.007001s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=106 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 16 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 16 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '用户管理' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '行为管理' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_action_log` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wu_action_log` WHERE ( `status` > -1 ) LIMIT 1   [ RunTime:0.041002s ]
+SQL: SELECT `id`,`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`remark`,`status`,`create_time` FROM `wu_action_log` WHERE ( `status` > -1 ) ORDER BY id desc LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_model` [ RunTime:0.005000s ]
+SQL: SELECT `id` FROM `wu_model` WHERE ( `name` = 'config' ) LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT `id` FROM `wu_model` WHERE ( `name` = 'config' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id` FROM `wu_model` WHERE ( `name` = 'config' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `id` FROM `wu_model` WHERE ( `name` = 'config' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id` FROM `wu_model` WHERE ( `name` = 'config' ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT `id` FROM `wu_model` WHERE ( `name` = 'config' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id` FROM `wu_model` WHERE ( `name` = 'config' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `id` FROM `wu_model` WHERE ( `name` = 'config' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id` FROM `wu_model` WHERE ( `name` = 'config' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `id` FROM `wu_model` WHERE ( `name` = 'config' ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_action` [ RunTime:0.002000s ]
+SQL: SELECT `id`,`name`,`title`,`remark`,`rule`,`log`,`type`,`status`,`update_time` FROM `wu_action` WHERE ( `status` > -1 ) AND ( `id` = 6 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `id`,`name`,`title`,`remark`,`rule`,`log`,`type`,`status`,`update_time` FROM `wu_action` WHERE ( `status` > -1 ) AND ( `id` = 6 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`title`,`remark`,`rule`,`log`,`type`,`status`,`update_time` FROM `wu_action` WHERE ( `status` > -1 ) AND ( `id` = 6 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`title`,`remark`,`rule`,`log`,`type`,`status`,`update_time` FROM `wu_action` WHERE ( `status` > -1 ) AND ( `id` = 6 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`title`,`remark`,`rule`,`log`,`type`,`status`,`update_time` FROM `wu_action` WHERE ( `status` > -1 ) AND ( `id` = 6 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`title`,`remark`,`rule`,`log`,`type`,`status`,`update_time` FROM `wu_action` WHERE ( `status` > -1 ) AND ( `id` = 6 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`title`,`remark`,`rule`,`log`,`type`,`status`,`update_time` FROM `wu_action` WHERE ( `status` > -1 ) AND ( `id` = 6 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `id`,`name`,`title`,`remark`,`rule`,`log`,`type`,`status`,`update_time` FROM `wu_action` WHERE ( `status` > -1 ) AND ( `id` = 6 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`title`,`remark`,`rule`,`log`,`type`,`status`,`update_time` FROM `wu_action` WHERE ( `status` > -1 ) AND ( `id` = 6 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`title`,`remark`,`rule`,`log`,`type`,`status`,`update_time` FROM `wu_action` WHERE ( `status` > -1 ) AND ( `id` = 6 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.032002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-08-12T19:38:52+08:00 ] ::1 /ke361/index.php?s=/Admin/User/action.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%User/action%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=19 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 16 )  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 16 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '用户管理' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '行为管理' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_action` [ RunTime:0.002000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wu_action` WHERE ( `status` >= 0 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`title`,`remark`,`rule`,`log`,`type`,`status`,`update_time` FROM `wu_action` WHERE ( `status` >= 0 ) ORDER BY id desc LIMIT 0,10   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.027002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-08-12T19:38:57+08:00 ] ::1 /ke361/index.php?s=/Admin/AuthManager/index.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%AuthManager/index%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.003000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=27 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=16 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 16 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 16 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '用户管理' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '行为管理' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `wu_auth_group` [ RunTime:0.003000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wu_auth_group` WHERE ( `status` >= 0 ) AND ( `module` = 'admin' ) LIMIT 1   [ RunTime:0.012001s ]
+SQL: SELECT `id`,`module`,`type`,`title`,`description`,`status`,`rules` FROM `wu_auth_group` WHERE ( `status` >= 0 ) AND ( `module` = 'admin' ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.030001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-08-12T19:39:00+08:00 ] ::1 /ke361/index.php?s=/Admin/Article/mydocument.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.005001s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Article/mydocument%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.004000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 2 )  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 2 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '内容' ) AND ( `pid` = 2 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_auth_group_access` [ RunTime:0.007000s ]
+SQL: SELECT `extend_id` FROM wu_auth_group_access g INNER JOIN wu_auth_extend c on g.group_id=c.group_id  WHERE ( g.uid='1' and c.type='1' and !isnull(extend_id) )  [ RunTime:0.017001s ]
+SQL: SHOW COLUMNS FROM `wu_category` [ RunTime:0.005000s ]
+SQL: SELECT `id`,`title`,`pid`,`allow_publish` FROM `wu_category` WHERE ( `status` = 1 ) ORDER BY pid,sort  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_document` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wu_document` WHERE ( `status` IN ('0','1','2') ) AND ( `uid` = 1 ) AND ( `pid` = 0 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `wu_document` WHERE ( `status` IN ('0','1','2') ) AND ( `uid` = 1 ) AND ( `pid` = 0 ) ORDER BY update_time desc LIMIT 0,10   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.053003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-08-12T19:39:03+08:00 ] ::1 /ke361/index.php?s=/Admin/Goods/index.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Goods/index%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=131 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 131 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 131 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '商品' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '采集' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '分类' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: where D:\xampp\htdocs\KE361\Application\Admin\Controller\GoodsController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `wu_goods` [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: where D:\xampp\htdocs\KE361\Application\Admin\Controller\AdminController.class.php 第 435 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `wu_goods` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `goods_id`,`num_iid`,`title`,`cate_id`,`tid`,`goods_type`,`provcity`,`nick`,`add_id`,`add_uname`,`seller_credit`,`discount_price`,`price`,`volume`,`comment_count`,`pic_url`,`item_url`,`click_url`,`shop_url`,`sclick_url`,`item_body`,`status`,`seo_title`,`seo_keywords`,`seo_description`,`ctime`,`hits`,`favor`,`sort` FROM `wu_goods` ORDER BY sort desc , goods_id desc LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_category_goods` [ RunTime:0.002001s ]
+NOTIC: [8] Undefined variable: where D:\xampp\htdocs\KE361\Application\Admin\Model\CategoryGoodsModel.class.php 第 13 行.
+SQL: SELECT * FROM `wu_category_goods` WHERE (  status='1' ) ORDER BY p_id,sort  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: meta_title D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 5 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\xampp\htdocs\KE361\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 154 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-08-12T19:39:04+08:00 ] ::1 /ke361/index.php?s=/Admin/Article/mydocument.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Article/mydocument%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 2 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 2 ) AND ( `hide` = 0 )  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '内容' ) AND ( `pid` = 2 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_auth_group_access` [ RunTime:0.002000s ]
+SQL: SELECT `extend_id` FROM wu_auth_group_access g INNER JOIN wu_auth_extend c on g.group_id=c.group_id  WHERE ( g.uid='1' and c.type='1' and !isnull(extend_id) )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_category` [ RunTime:0.002000s ]
+SQL: SELECT `id`,`title`,`pid`,`allow_publish` FROM `wu_category` WHERE ( `status` = 1 ) ORDER BY pid,sort  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_document` [ RunTime:0.002000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wu_document` WHERE ( `status` IN ('0','1','2') ) AND ( `uid` = 1 ) AND ( `pid` = 0 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `wu_document` WHERE ( `status` IN ('0','1','2') ) AND ( `uid` = 1 ) AND ( `pid` = 0 ) ORDER BY update_time desc LIMIT 0,10   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2015-08-12T19:39:09+08:00 ] ::1 /ke361/index.php?s=/Admin/Article/index/cate_id/39.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Article/index%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.005000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 2 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 2 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '内容' ) AND ( `pid` = 2 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_auth_group_access` [ RunTime:0.004000s ]
+SQL: SELECT `extend_id` FROM wu_auth_group_access g INNER JOIN wu_auth_extend c on g.group_id=c.group_id  WHERE ( g.uid='1' and c.type='1' and !isnull(extend_id) )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_category` [ RunTime:0.005001s ]
+SQL: SELECT `id`,`title`,`pid`,`allow_publish` FROM `wu_category` WHERE ( `status` = 1 ) ORDER BY pid,sort  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`title`,`pid` FROM `wu_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_model` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `wu_model` WHERE ( `name` = 'document' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_document` [ RunTime:0.004000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wu_document` WHERE ( `status` IN ('0','1','2') ) AND ( `pid` = 0 ) AND ( `category_id` = 39 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `wu_document` WHERE ( `status` IN ('0','1','2') ) AND ( `pid` = 0 ) AND ( `category_id` = 39 ) ORDER BY level DESC,id DESC LIMIT 0,10   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.051002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2015-08-12T19:43:14+08:00 ] ::1 /ke361/index.php?s=/Home/Index/index.html
+NOTIC: [8] Use of undefined constant WEB_SITE_TITLE - assumed 'WEB_SITE_TITLE' D:\xampp\htdocs\KE361\Application\Home\Controller\HomeController.class.php 第 26 行.
+NOTIC: [8] Use of undefined constant TONGJI - assumed 'TONGJI' D:\xampp\htdocs\KE361\Application\Home\Controller\HomeController.class.php 第 27 行.
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\xampp\htdocs\KE361\Application\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `wu_nav` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `wu_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `wu_category` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `wu_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000000s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `wu_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\KE361\Application\Home\Controller\HomeController.class.php 第 66 行.
+NOTIC: [8] Undefined variable: article D:\xampp\htdocs\KE361\Application\Home\Controller\HomeController.class.php 第 71 行.
+SQL: SHOW COLUMNS FROM `wu_banner` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `wu_banner` WHERE ( `status` = 1 ) ORDER BY `sort` ASC  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_ad` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `wu_ad` WHERE ( `state` = 1 ) ORDER BY `order` DESC  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\KE361\Application\Home\Controller\IndexController.class.php 第 29 行.
+SQL: SHOW COLUMNS FROM `wu_goods` [ RunTime:0.002000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wu_goods` WHERE ( `status` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wu_goods` WHERE ( `status` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: focus D:\xampp\htdocs\KE361\Application\Home\Controller\IndexController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `wu_goods` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `wu_goods` WHERE ( `status` = 1 ) ORDER BY `sort` DESC,goods_id DESC LIMIT 0,20   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: flink D:\xampp\htdocs\KE361\Application\Home\Controller\IndexController.class.php 第 46 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: site_title D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 14 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 244 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 244 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 244 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 244 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 244 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 244 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 244 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 244 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 244 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 244 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 244 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 244 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 244 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 244 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 244 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 244 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 244 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 244 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 244 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 244 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 266 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 267 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 271 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 272 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 276 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 277 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 281 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 282 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-08-12T19:43:30+08:00 ] ::1 /ke361/index.php?s=/Admin/Config/group.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Config/group%' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.003000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 68 )  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_config` [ RunTime:0.003000s ]
+SQL: SELECT `id`,`name`,`title`,`extra`,`value`,`remark`,`type` FROM `wu_config` WHERE ( `status` = 1 ) AND ( `group` = 1 ) ORDER BY sort  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-08-12T19:43:30+08:00 ] ::1 /ke361/index.php?s=/Admin/Config/group/id/1.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Config/group%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.003000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 68 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_config` [ RunTime:0.002000s ]
+SQL: SELECT `id`,`name`,`title`,`extra`,`value`,`remark`,`type` FROM `wu_config` WHERE ( `status` = 1 ) AND ( `group` = 1 ) ORDER BY sort  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-08-12T19:43:36+08:00 ] ::1 /ke361/index.php?s=/Admin/Config/save.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Config/save%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002001s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=74 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=70 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 68 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `wu_config` [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: image D:\xampp\htdocs\KE361\Application\Admin\Controller\ConfigController.class.php 第 118 行.
+SQL: UPDATE `wu_config` SET `value`='这是网站标题' WHERE ( `name` = 'WEB_SITE_TITLE' ) [ RunTime:0.000000s ]
+SQL: UPDATE `wu_config` SET `value`='asdlfjaskejgoasjdlfka' WHERE ( `name` = 'TONGJI' ) [ RunTime:0.000000s ]
+SQL: UPDATE `wu_config` SET `value`='/ke361/Uploads/site_logo/55cabbd7249a5.gif' WHERE ( `name` = 'WEB_SITE_LOGO' ) [ RunTime:0.000000s ]
+SQL: UPDATE `wu_config` SET `value`='/ke361/Uploads/site_logo/55cabb91db451.ico' WHERE ( `name` = 'WEB_SITE_ICO' ) [ RunTime:0.000000s ]
+SQL: UPDATE `wu_config` SET `value`='厦门旅行社' WHERE ( `name` = 'WEB_SITE_NAME' ) [ RunTime:0.000000s ]
+SQL: UPDATE `wu_config` SET `value`='0592-8888888' WHERE ( `name` = 'WEB_SITE_TEL' ) [ RunTime:0.001000s ]
+SQL: UPDATE `wu_config` SET `value`='Ke361 淘宝客商城' WHERE ( `name` = 'WEB_SITE_DESCRIPTION' ) [ RunTime:0.000000s ]
+SQL: UPDATE `wu_config` SET `value`='1' WHERE ( `name` = 'WEB_SITE_CLOSE' ) [ RunTime:0.000000s ]
+SQL: UPDATE `wu_config` SET `value`='Ke361 淘宝客商城' WHERE ( `name` = 'WEB_SITE_KEYWORD' ) [ RunTime:0.000000s ]
+SQL: UPDATE `wu_config` SET `value`='' WHERE ( `name` = 'WEB_SITE_ICP' ) [ RunTime:0.000000s ]
+SQL: UPDATE `wu_config` SET `value`='default_color' WHERE ( `name` = 'COLOR_STYLE' ) [ RunTime:0.000000s ]
+
+[ 2015-08-12T19:43:37+08:00 ] ::1 /ke361/index.php?s=/Admin/Config/group/id/1.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Config/group%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002001s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 68 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`title`,`extra`,`value`,`remark`,`type` FROM `wu_config` WHERE ( `status` = 1 ) AND ( `group` = 1 ) ORDER BY sort  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-08-12T19:43:39+08:00 ] ::1 /ke361/index.php?s=/Home/Goods/cate/id/2.html
+NOTIC: [8] Use of undefined constant WEB_SITE_TITLE - assumed 'WEB_SITE_TITLE' D:\xampp\htdocs\KE361\Application\Home\Controller\HomeController.class.php 第 26 行.
+NOTIC: [8] Use of undefined constant TONGJI - assumed 'TONGJI' D:\xampp\htdocs\KE361\Application\Home\Controller\HomeController.class.php 第 27 行.
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\xampp\htdocs\KE361\Application\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `wu_nav` [ RunTime:0.002001s ]
+SQL: SELECT * FROM `wu_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `wu_category` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `wu_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000000s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `wu_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\KE361\Application\Home\Controller\HomeController.class.php 第 66 行.
+NOTIC: [8] Undefined variable: article D:\xampp\htdocs\KE361\Application\Home\Controller\HomeController.class.php 第 71 行.
+SQL: SHOW COLUMNS FROM `wu_category_goods` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `wu_category_goods` WHERE ( `id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_goods` [ RunTime:0.002000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wu_goods` WHERE ( `cate_id` = 2 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wu_goods` WHERE ( `cate_id` = 2 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_goods` [ RunTime:0.003001s ]
+SQL: SELECT * FROM `wu_goods` WHERE ( `cate_id` = 2 ) AND ( `status` = 1 ) ORDER BY `sort` DESC,goods_id DESC LIMIT 0,20   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: site_title D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 14 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 255 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 256 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 260 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 261 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 265 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 266 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 270 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 271 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-08-12T19:44:03+08:00 ] ::1 /ke361/index.php?s=/Home/Goods/cate/id/2.html
+NOTIC: [8] Use of undefined constant WEB_SITE_TITLE - assumed 'WEB_SITE_TITLE' D:\xampp\htdocs\KE361\Application\Home\Controller\HomeController.class.php 第 26 行.
+NOTIC: [8] Use of undefined constant TONGJI - assumed 'TONGJI' D:\xampp\htdocs\KE361\Application\Home\Controller\HomeController.class.php 第 27 行.
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\xampp\htdocs\KE361\Application\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `wu_nav` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `wu_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_category` [ RunTime:0.005001s ]
+SQL: SELECT * FROM `wu_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000000s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `wu_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\KE361\Application\Home\Controller\HomeController.class.php 第 66 行.
+NOTIC: [8] Undefined variable: article D:\xampp\htdocs\KE361\Application\Home\Controller\HomeController.class.php 第 71 行.
+SQL: SHOW COLUMNS FROM `wu_category_goods` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `wu_category_goods` WHERE ( `id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_goods` [ RunTime:0.004000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wu_goods` WHERE ( `cate_id` = 2 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wu_goods` WHERE ( `cate_id` = 2 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_goods` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `wu_goods` WHERE ( `cate_id` = 2 ) AND ( `status` = 1 ) ORDER BY `sort` DESC,goods_id DESC LIMIT 0,20   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: site_title D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 14 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 255 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 256 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 260 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 261 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 265 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 266 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 270 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 271 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-08-12T19:44:48+08:00 ] ::1 /ke361/index.php?s=/Admin/Menu/index.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Menu/index%' ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=75 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 68 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`title` FROM `wu_menu`  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`title`,`pid`,`sort`,`url`,`hide`,`tip`,`group`,`is_dev` FROM `wu_menu` WHERE ( `pid` = 0 ) ORDER BY sort asc,id asc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-08-12T19:44:57+08:00 ] ::1 /ke361/index.php?s=/Admin/Menu/add/pid/0.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Menu/add%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=96 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=75 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 68 )  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`title`,`pid`,`sort`,`url`,`hide`,`tip`,`group`,`is_dev` FROM `wu_menu`  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-08-12T19:45:16+08:00 ] ::1 /ke361/index.php?s=/Admin/Category/index.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Category/index%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.005001s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=80 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 68 )  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_category` [ RunTime:0.005000s ]
+SQL: SELECT `id`,`name`,`title`,`sort`,`pid`,`allow_publish`,`status` FROM `wu_category` WHERE ( `status` > -1 ) ORDER BY sort  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.042003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.048003s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-08-12T19:45:18+08:00 ] ::1 /ke361/index.php?s=/Admin/Nav/index.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Nav/index%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.005001s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=76 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 68 )  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `wu_nav` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `wu_nav` WHERE ( `status` > -1 ) AND ( `pid` = 0 ) ORDER BY sort asc,id asc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.031001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-08-12T19:45:22+08:00 ] ::1 /ke361/index.php?s=/Admin/Nav/add/pid/0.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Nav/add%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=77 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=76 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 68 )  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-08-12T19:49:44+08:00 ] ::1 /ke361/index.php?s=/Home/Goods/cate/id/2.html
+NOTIC: [8] Use of undefined constant WEB_SITE_TITLE - assumed 'WEB_SITE_TITLE' D:\xampp\htdocs\KE361\Application\Home\Controller\HomeController.class.php 第 26 行.
+NOTIC: [8] Use of undefined constant TONGJI - assumed 'TONGJI' D:\xampp\htdocs\KE361\Application\Home\Controller\HomeController.class.php 第 27 行.
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\xampp\htdocs\KE361\Application\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `wu_nav` [ RunTime:0.002001s ]
+SQL: SELECT * FROM `wu_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `wu_category` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `wu_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000000s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `wu_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\KE361\Application\Home\Controller\HomeController.class.php 第 66 行.
+NOTIC: [8] Undefined variable: article D:\xampp\htdocs\KE361\Application\Home\Controller\HomeController.class.php 第 71 行.
+SQL: SHOW COLUMNS FROM `wu_category_goods` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `wu_category_goods` WHERE ( `id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_goods` [ RunTime:0.003000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wu_goods` WHERE ( `cate_id` = 2 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wu_goods` WHERE ( `cate_id` = 2 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_goods` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `wu_goods` WHERE ( `cate_id` = 2 ) AND ( `status` = 1 ) ORDER BY `sort` DESC,goods_id DESC LIMIT 0,20   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: site_title D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 14 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined index: goods_id D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 200 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 255 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 256 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 260 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 261 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 265 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 266 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 270 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\9f00623dc302491bce4d14bef939d347.php 第 271 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-08-12T19:49:52+08:00 ] ::1 /ke361/index.php?s=/Admin/Nav/add/pid/0.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Nav/add%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=77 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=76 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 68 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-08-12T19:50:27+08:00 ] ::1 /ke361/index.php?s=/Admin/Nav/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Nav/add%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=77 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=76 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 68 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_nav` [ RunTime:0.002000s ]
+SQL: INSERT INTO `wu_nav` (`pid`,`title`,`url`,`target`,`head`,`side`,`foot`,`sort`,`id`,`create_time`,`update_time`,`status`) VALUES (0,'还是首页','Index/index',0,1,1,1,0,0,1439380227,1439380227,1) [ RunTime:0.019001s ]
+
+[ 2015-08-12T19:50:29+08:00 ] ::1 /ke361/index.php?s=/Admin/Nav/index.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Nav/index%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.004000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=76 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 68 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_nav` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `wu_nav` WHERE ( `status` > -1 ) AND ( `pid` = 0 ) ORDER BY sort asc,id asc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-08-12T19:50:55+08:00 ] ::1 /ke361/index.php?s=/Admin/Nav/edit/id/6/pid/0.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Nav/edit%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.003000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=78 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=76 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 68 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001001s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_nav` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `wu_nav` WHERE ( `id` = 6 ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

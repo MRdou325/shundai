@@ -1,0 +1,489 @@
+ol, ul {list-style: none;}
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+margin: 0;
+padding: 0;
+}
+.m_l10{margin-left:10px;}
+.m_b14{margin-bottom:14px;}
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+.input_calendar{
+    width:100px;
+    cursor:pointer;
+    display: initial;
+}
+.input_calendar input{
+    width:75px;
+    cursor:pointer;
+}
+
+/*¼Û¸ñ±à¼­*/
+.date_price{
+    width:640px;
+}
+.date_price .tab_ul{
+    position:relative;
+    height:30px;
+    border-left: 1px solid #ccc;
+    z-index:2;
+    width:400px;
+	margin: 0px;
+	padding:0px;
+}
+.date_price .tab_ul li{
+    font-size:12px;
+    float:left;
+    height:28px;
+    border:1px solid #ccc;
+    border-left:0px;
+    padding:0 12px;
+    line-height:28px;
+    background:#f4f4f4;
+    cursor:pointer;
+}
+.date_price .tab_ul li.on{
+    height:27px;
+    border-top:2px solid #ff9600;
+    border-bottom:1px solid #fff;
+    padding:0 12px;
+    line-height:26px;
+    background:#fff;
+    cursor:default;
+}
+.date_price .date_table{
+    border:1px solid #ccc;
+    margin-top:-1px;
+    padding:0px 9px 9px 9px;
+    font-size:12px;
+    background: #fff;
+}
+.date_price .operate_area{
+    background:#fff6c3;
+    border-top:9px solid #fff;
+    padding:15px 18px;
+}
+.date_price .operate_area .input_text{
+    margin-top:2px;
+    height:22px;
+    display: initial;
+}
+.date_price .operate_area .input_text input{
+    margin-top:2px;
+	border: 0;
+	height: 20px;
+	line-height: 18px;
+	outline: none;
+	margin: 5px 5px 0px 5px;
+	vertical-align: top;
+	background-color: #f5f5f5;
+	color: #555;
+	text-align: left;
+	width: 115px;
+	text-indent: 5px;
+	border: 1px solid #ccc;
+}
+.date_price .operate_area .input_calendar{
+    background-position: right 4px;
+}
+.date_price .operate_area .add_btn,.date_price .operate_area .tag_btn{
+	background: url(../images/green_btn.gif) repeat-x;
+	color: #fff;
+	display: inline-block;
+	padding: 0 15px;
+	border-radius: 3px;
+    height:22px;
+    line-height:22px;
+    margin-top:2px;
+    font-size:12px;
+	text-decoration: none;
+}
+.date_price .operate_area .tp{
+    padding-bottom:10px;
+}
+.input_checkbox{
+    display: inline-block;
+    line-height: 29px;
+    vertical-align: top;
+    position: relative;
+    padding-right: 12px;
+    padding-left: 20px;
+}
+.input_checkbox input{
+    position:absolute;
+    top:4px;
+    left:0px;
+}
+.date_price .operate_area span{
+    display:inline-block;
+    height:29px;
+    line-height:29px;
+    vertical-align:top;
+}
+.date_price .operate_area em{
+    color:#FF3000;
+    margin-right:5px;
+}
+.date_price .month_row{
+    margin-top:10px;
+    border:1px solid #ccc;
+    position:relative;
+	width:576px
+}
+.date_price .month_row .sd{
+    width:65px;
+    position:absolute;
+    top:50%;
+    margin-top:-28px;
+    left:0px;
+}
+.date_price .month_row .sd .year{
+    line-height:20px;
+    text-align:center;
+    font-family:"Î¢ÈíÑÅºÚ";
+    font-size:14px;
+    color:#999;
+}
+.date_price .month_row .sd .month{
+    line-height:30px;
+    text-align:center;
+    font-size:26px;
+    font-family:"Î¢ÈíÑÅºÚ";
+    color:#666;
+}
+.date_price .month_row .hd{
+    padding-left:65px;
+    height:31px;
+    border-bottom:1px solid #ccc;
+    background:#808080;
+}
+.date_price .month_row .hd li{
+    height:31px;
+    float:left;
+    line-height:31px;
+    width:72px;
+    text-align:center;
+    color:#fff;
+}
+.date_price .month_row .bd{
+    padding-left:65px;
+    margin-top:-1px;
+}
+.date_price .month_row .bd li{
+    float:left;
+    width:72px;
+    border-left:1px solid #ccc;
+    border-top:1px solid #ccc;
+    position:relative;
+}
+.date_price .month_row .jieri{
+    background:#FFEFEF;
+}
+.date_price .month_row .jieri .jieri_tit{
+    position:absolute;
+    top:5px;
+    right:5px;
+    height:20px;
+    line-height:20px;
+    color:#999;
+}
+.date_price .month_row .jieri .price{
+    border:1px solid #FFEFEF;
+}
+.date_price .month_row .bd li:hover{
+    z-index:2;
+}
+.date_price .month_row .li_wrap{
+    border:1px solid #ccc;
+    margin:-1px;
+    height:52px;
+    padding-top:5px;
+}
+.date_price .month_row .bd li:hover .li_wrap{
+    border:1px solid #ff9600;
+    background:#fff6c3;
+}
+.date_price .month_row .bd li:hover .price{
+    border:1px solid #ff9600;
+}
+.date_price .month_row .bd li:hover .add_date_price{
+    display:block;
+}
+.date_price .month_row .bd li p{
+    height:20px;
+    padding-left:10px;
+    line-height:20px;
+    color:#999;
+    font-size:14px;
+    font-family:Î¢ÈíÑÅºÚ;
+}
+.date_price .month_row .bd li:hover p{
+    color:#f60;
+}
+.date_price .month_row .bd li.disable .li_wrap{
+    border:1px solid #ccc;
+    background:#f7f7f7;
+}
+.date_price .month_row .bd li.disable p{
+    color:#d2d2d2;
+}
+.date_price .month_row .price{
+    font-size:12px;
+    color:#ff9500;
+    line-height:17px;
+    height:17px;
+    display:block;
+    width:61px;
+    position:relative;
+    border:1px solid #fff;
+    margin-left:4px;
+    padding-left:5px;
+    overflow:hidden;
+    font-family:Î¢ÈíÑÅºÚ;
+}
+.date_price .month_row .price i{
+    height:13px;
+    width:13px;
+    background:url(../images/icon.png) no-repeat -62px 2px;
+    position:absolute;
+    right:-100px;
+    top:2px;
+}
+.date_price .month_row .bd li:hover .price{
+    background:#fff;
+}
+.date_price .month_row .bd li:hover .price i{
+    right:2px;
+}
+.date_price .month_row .price i:hover{
+    background:url(../images/icon.png) no-repeat -81px 0px;
+}
+.date_price .month_row .add_date_price{
+    font-weight:bold;
+    color:#ff9500;
+    padding-left:10px;
+    font-size:12px;
+    line-height:20px;
+    height:20px;
+    display:none;
+}
+.date_price .month_row .add_price_dialog{
+    border:1px solid #ff9600;
+    padding-top:5px;
+    padding-bottom:6px;
+    position:absolute;
+    width:78px;
+    top:0px;
+    left:0px;
+    background:#fff6c3;
+    display:none;
+    z-index:3;
+}
+.date_price .month_row .add_price_dialog p{
+    height:20px;
+    padding-left:10px;
+    line-height:20px;
+    color:#4d4d4d;
+    font-family:Tahoma;
+}
+.date_price .month_row .add_price_dialog input{
+    border:1px solid #ff9600;
+    background-color:#fff;
+    background-repeat:no-repeat;
+    line-height:17px;
+    height:17px;
+    font-size:12px;
+    color:#666;
+    width:63px;
+    padding-left:5px;
+    margin-left:4px;
+    margin-bottom:5px;
+}
+.date_price .month_row .add_price_dialog .ok_btn{
+    border:1px solid #ff9600;
+    background:#ff9600;
+    line-height:17px;
+    height:17px;
+    font-size:12px;
+    color:#666;
+    width:35px;
+    text-align:center;
+    margin-left:4px;
+    display:block;
+    color:#fff;
+}
+.date_price .quick_price_edit{
+}
+.date_price .quick_price_edit .bd li .li_wrap{
+    height:70px;
+}
+.date_price .quick_price_edit .bd li input{
+    border:1px solid #ededed;
+    background-color:#fafafa;
+    background-repeat:no-repeat;
+    line-height:17px;
+    height:17px;
+    font-size:12px;
+    color:#666;
+    width:63px;
+    padding-left:5px;
+    margin-left:4px;
+    margin-bottom:5px;
+}
+.date_price .quick_price_edit .bd li:hover input{
+    border:1px solid #ff9600;
+    background-color:#fff;
+}
+.date_price .quick_price_edit .sd{
+}
+.date_price .month_row input.youhui{
+    background-image:url(../images/price_tip_text.gif);
+    background-position:5px 2px
+}
+.date_price .month_row input.child{
+    background-image:url(../images/price_tip_text.gif);
+    background-position:5px -20px
+}
+.date_price .month_row .bd input.on{
+    background:#fff;
+    border:1px solid #ff9600;
+}
+/*ie hack*/
+.date_price .month_row .add_date_price{
+    _display:block;
+    _font-weight:normal;
+}
+.date_price .month_row .add_date_price:hover{
+    _display:block;
+    _font-weight:700;
+}
+.date_price .month_row .price i{
+    _background:url(../images/icon.gif) no-repeat -62px 2px;
+    _cursor:pointer;
+}
+.date_price .month_row .price:hover{
+    _font-weight:700;
+}
+.date_price .month_row .price:hover i{
+    _background:url(../images/icon.gif) no-repeat -62px 2px;
+    _right:2px;
+}
+/*.date_price .operate_area{
+    *height:68px;
+}*/
+.date_price .operate_area span{
+    *display:inline;
+    _position:relative;
+}
+.date_price .operate_area .tp label input{
+    *top:4px;
+    *left:-3px;
+}
+.date_price .J_date_area .tp,.J_date_area .bt{
+    *position:relative;
+}
+.date_price .month_row .sd {
+    _width: 65px;
+    _position: absolute;
+    _top: 10%;
+    _margin-top: 0px;
+    _left: 0px;
+}
+.date_price .month_row .bd{
+    _margin-top:0px;
+    _margin-bottom:-2px;
+    _width:554px;
+}
+.date_price .month_row .bd ul{
+    _border-left:1px solid #ccc;
+}
+.date_price .month_row .bd li{
+    _border:0px;
+    _border-right:1px solid #ccc;
+    _border-bottom:1px solid #ccc;
+    _margin:0px;
+}
+.date_price .month_row .li_wrap{
+    _border:0px solid #ccc;
+    _margin:0px;
+}
+.date_price .month_row .bd li.disable{
+    _border:0px;
+    _border-right:1px solid #ccc;
+    _border-bottom:1px solid #ccc;
+}
+.date_price .month_row .bd li.disable .li_wrap {
+    _border:0px;
+}
+
+#fail_alert {
+box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+border: 1px solid #ccc;
+width: auto;
+height: 68px;
+z-index: 10000;
+line-height: 68px;
+color: #333;
+font-size: 14px;
+background: url(../images/lee_icons.png) no-repeat -350px -310px #fff;
+border-radius: 5px;
+font-weight: bold;
+}
+#fail_alert p {
+line-height: 68px;
+padding-left: 60px;
+text-align: left;
+padding-right: 20px;
+}
+#confirm_alert {
+background: #fff;
+box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+border: 1px solid #ccc;
+width: 300px;
+z-index: 10000;
+color: #333;
+border-radius: 5px;
+padding: 10px;
+text-align: right;
+}
+#confirm_alert p {
+text-align: center;
+height: 68px;
+font-size: 14px;
+font-weight: bold;
+line-height: 68px;
+}
+#confirm_alert .confirm_btn, #confirm_alert .cancel_btn {
+background: #f7f7f7;
+height: 25px;
+line-height: 25px;
+color: #333;
+font-size: 12px;
+display: inline-block;
+padding: 0 15px;
+border-radius: 3px;
+margin-left: 15px;
+}
+#confirm_alert .confirm_btn {
+background: #51B500;
+color: #fff;
+}
+
+.date_price .small_btn {
+display: inline-block;
+vertical-align: top;
+height: 22px;
+line-height: 22px;
+background: url(../images/small_btn.gif) repeat-x;
+border: 1px solid #ddd;
+border-radius: 2px;
+color: #333;
+padding: 0 10px;
+font-size: 12px;
+float: right;
+text-decoration: none;
+}

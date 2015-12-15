@@ -1,0 +1,16 @@
+<volist name="goods['days_body']" id="days" key="k">
+<div class="cpdetail_con_dayBox">
+    <h3 class="cpdetail_xcjs_day_city" id="journey_3"><span><i>D</i>{$k}</span>{$days["name"]}</h3>
+    <div class="cpdetail_xcjs_day_xc"><span class="cpdetail_xcjs_sancan icon"></span><b>三餐：</b>
+    	早餐：<b><php>if(array_key_exists(0,$days["eat"])){</php><font color="#3bb41c">包含</font><php>}else{</php><font color="#fb9f28">敬请自理</font><php>}</php></b> &nbsp;&nbsp; 
+    	午餐：<b><php>if(array_key_exists(0,$days["eat"])){</php><font color="#3bb41c">包含</font><php>}else{</php><font color="#fb9f28">敬请自理</font><php>}</php></b> &nbsp;&nbsp; 
+    	晚餐：<b><php>if(array_key_exists(0,$days["eat"])){</php><font color="#3bb41c">包含</font><php>}else{</php><font color="#fb9f28">敬请自理</font><php>}</php></b></div>
+    <div class="cpdetail_xcjs_day_xc"><span class="cpdetail_xcjs_zhusu icon"></span><b>住宿：</b>{$days["sleep"]}</div>
+    <div class="cpdetail_xcjs_day_xc clearfix">
+        <span class="cpdetail_xcjs_jingdian icon"></span>
+            <div class="cpdetail_xcjs_day_xc_jingdian">
+               {$days["content"]}
+            </div>
+    </div>
+</div>
+</volist>

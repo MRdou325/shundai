@@ -1,0 +1,93 @@
+<extend name="Public/base"/>
+
+<block name="body">
+<style>
+#orderinfo{
+	width: 100%;
+}
+#orderinfo tr{
+	height: 30px;
+	line-height: 30px;
+	background: #fff; 
+}
+#orderinfo tr.even{
+	background: #eee;
+}
+#orderinfo tr td {
+	padding: 5px 10px;
+	font-size: 14px;
+}
+#orderinfo tr td.title{
+	font-weight: bold;
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee; 
+}
+#orderinfo tr.even td.title{
+	border-left: 1px solid #fff;
+	border-right: 1px solid #fff; 
+}
+</style>
+	<div class="main-title">
+		<h2>订单详情</h2>
+	</div>
+		<div class="form-item">
+			<table id="orderinfo">
+				<tr class="old">
+					<td class="title">旅游线路</td>
+					<td colspan="5">{$orders.goods_name}</td>
+					<td class="title">出行时间</td>
+					<td>{$orders.date}</td>
+				</tr>
+				<tr class="even">
+					<td class="title">报名人数</td>
+					<td>{$orders.num}个大人，{$orders.child}个小孩</td>
+					<td class="title">原价</td>
+					<td>{$orders.price}</td>
+					<td class="title">现价</td>
+					<td>{$orders.discount_price}</td>
+					<td class="title">儿童价</td>
+					<td>{$orders.child_price}</td>
+				</tr>
+				<tr class="old">
+					<td class="title">报名人</td>
+					<td>{$orders.name}</td>
+					<td class="title">电话</td>
+					<td>{$orders.tel}</td>
+					<td class="title">邮箱</td>
+					<td>{$orders.email}</td>
+					<td class="title">地址</td>
+					<td>{$orders.address}</td>
+				</tr>
+				<tr class="even">
+					<td class="title">留言</td>
+					<td colspan="7">{$orders.content}</td>
+				</tr>
+			</table>
+		</div>
+	<form action="{:U('status',array("id"=>$orders["id"]))}" method="post" class="form-horizontal">
+		<div class="form-item">
+			<label class="item-label">当前状态<span class="check-tips"></span></label>
+			<div class="controls">
+				<select name="status">
+					<volist name="statuslist" id="list">
+						<option value="{$list.id}"<php>if($list['id'] == $orders['status']){</php>selected<php>}</php>>{$list.name}</option>
+					</volist>
+				</select>
+			</div>
+		</div>
+		<div class="form-item">
+			<input type="hidden" name="id" value="{$info.id|default=''}">
+			<button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+			<button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+		</div>
+	</form>
+</block>
+
+<block name="script">
+	<script type="text/javascript">
+		Think.setValue("type", {$info.type|default=0});
+		Think.setValue("group", {$info.group|default=0});
+		//导航高亮
+		highlight_subnav('{:U('Config/index')}');
+	</script>
+</block>

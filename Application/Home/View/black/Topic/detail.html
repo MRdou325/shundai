@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{:C('WEB_SITE_TITLE')}</title>
+        <meta name="keywords" content="{:C('WEB_SITE_KEYWORD')}" />
+    <meta name="description" content="{:C('WEB_SITE_DESCRIPTION')}">
+    <include file="Public:head" />
+    <style>
+        .pagination div{
+            background: #e8ae49;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            text-align: center;
+            cursor: pointer;
+        }
+        #artlist dl dt{float:right;width:710px;}
+        #artlist dl dt span{color:#aaa;margin-right:20px;}
+        #artlist dl dt p{margin-bottom:5px;font-size: 14px;}
+        #artlist dl dd img{width:100px;height:100px;}
+        #artlist .btn{margin-left:10px;width:100px;}
+        #baoming dl{margin:20px;}
+        #baoming dd input{width:775px;}
+        #baoming dd textarea{width:785px;height:300px;}
+        
+        #baoming dd select{width:790px;height:34px;}
+        .article-box #baoming dl dt{font-size: 17px;color:#aaa;margin-bottom:10px;font-weight:100;}
+    </style>
+</head>
+<body class=''>
+<include file="Public:nav" />
+<!--主体 start-->
+<div class="container tc-main" >
+    <div class="pg-opt pin">
+        <div class="container">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="span9">
+            <div class="" id='artlist'>                
+                <div class="list-boxes" style='box-shadow: 0 1px 2px rgba(0,0,0,0.05);'>
+                    <h2><a href="{:U('topic/detail',array('tid'=>$detail['tid']))}">{$detail.topic_name}</a></h2>
+                    </br>
+                    <dl>
+                        <dt style=''>
+                        <p style=''><span>活动时间</span>{:date('Y-m-d',$detail['start_time'])}&nbsp;&nbsp;~&nbsp;&nbsp;{:date('Y-m-d',$detail['end_time'])}</p>
+                                <p style=''><span>店铺要求</span>{:cutstr($detail['shop_conditions'],88)}</p>
+                                <p style=''><span>价格要求</span>{:cutstr($detail['price_conditions'],88)}</p>
+                                <p style=''><span>已经报名</span>{$detail['num']}</p>
+                        </dt>
+                        <dd>                                
+                            <img src='{$detail.pic_url}'>
+                        </dd>
+                    </dl>                        
+                    <div>
+                        <a class="btn btn-success pull-right" href="{:U('topic/topiclist',array('tid'=>$detail['tid']))}">进入专场</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tc-box first-box article-box">
+                <h2 style='font-size:25px;padding:5px;'>活动详情</h2>
+                <hr>
+                <div id="article_content" style='padding:10px;'>{:stripslashes($detail['content'])}</div>
+            </div>
+
+            <div class="tc-box first-box article-box">
+                <h2 style='font-size:25px;padding:5px;'>申请报名</h2>
+                <hr>                
+                <form action="{:U('topic/detail')}" method="post" enctype="multipart/form-data">
+                    {:setParam(array('op'=>'do','tid'=>ggp('tid:i')))}
+                <div id="baoming" >
+                    <dl>
+                        <dt>商品标题</dt>
+                        <dd><input type='text' name='title' /></dd>
+                    </dl>
+                    
+                    <dl>
+                        <dt>商品ID</dt>
+                        <dd><input type='text' name='num_iid' /></dd>
+                    </dl>
+
+                    <dl>
+                        <dt>推广地址</dt>
+                        <dd><input type='text' name='click_url' /></dd>
+                    </dl>
+                    
+                    <dl>
+                        <dt>商品地址</dt>
+                        <dd><input type='text' name='item_url' /></dd>
+                    </dl>
+
+                    <dl>
+                        <dt>图片地址</dt>
+                        <dd><input type='text' name='pic_url' /></dd>
+                    </dl>
+
+                    <dl>
+                        <dt>商品类型</dt>
+                        <dd>
+                            <select name='goods_type'>
+                                <option value='tmall'>天猫</option>
+                                <option value='taobao'>淘宝</option>
+                            </select>
+                        </dd>
+                    </dl>
+
+                    <dl>
+                        <dt>商品价格</dt>
+                        <dd><input type='text' name='price' /></dd>
+                    </dl>
+
+                    <dl>
+                        <dt>折扣价格</dt>
+                        <dd><input type='text' name='discount_price' /></dd>
+                    </dl>
+
+                    <dl>
+                        <dt>商品详情</dt>
+                        <dd>
+                            <link rel="stylesheet" href="public/kindeditor/themes/default/default.css" />
+                            <link rel="stylesheet" href="public/kindeditor/plugins/code/prettify.css" />
+                            <script charset="utf-8" src="public/kindeditor/kindeditor.js"></script>
+                            <script charset="utf-8" src="public/kindeditor/lang/zh_CN.js"></script>
+                            <script charset="utf-8" src="public/kindeditor/plugins/code/prettify.js"></script>
+                            <script>
+                                KindEditor.ready(function (K) {
+                                    var editor1 = K.create('textarea[name="item_body"]', {
+                                        cssPath: 'public/kindeditor/plugins/code/prettify.css',
+                                        uploadJson: 'public/kindeditor/php/upload_json.php',
+                                        fileManagerJson: 'public/kindeditor/php/file_manager_json.php',
+                                        allowFileManager: true,
+                                        afterCreate: function () {
+                                            var self = this;
+                                            K.ctrl(document, 13, function () {
+                                                self.sync();
+                                                K('form[name=example]')[0].submit();
+                                            });
+                                            K.ctrl(self.edit.doc, 13, function () {
+                                                self.sync();
+                                                K('form[name=example]')[0].submit();
+                                            });
+                                        }
+                                    });
+                                    prettyPrint();
+                                });
+                            </script>
+
+                            <textarea name="item_body" style="visibility:hidden;"></textarea>                            
+                        </dd>
+                    </dl>                    
+                    <dl>                        
+                        <dd><button class="btn btn-success">提交报名</button></dd>
+                    </dl>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="span3">
+            <div class="tc-box first-box">
+                <div class="headtitle">
+                    <h2>热门文章</h2>
+                </div>
+                <div class="ranking">
+                    <ul class="unstyled">
+                        <php>$num=1;$zhiding = D('Article')->getZhiding();</php>
+                        <foreach name="zhiding" item="data">                            
+                            <li><i><php>echo $num++;</php></i><a title="{$data['title']}" href="{:U('article/detail',array('aid'=>$data['aid']))}">{$data['title']}</a></li>
+                        </foreach>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--主体 end-->
+<include file="Public:footer" />
+<include file="Public:scripts" />
+<script src="__JS__/slippry.min.js"></script>
+<script type="text/javascript">
+                                var loadObj = $('.pagination div');
+                                var totalpage = {$totalpage};
+                                var nowpage = 1;
+                                if (totalpage == nowpage)
+                                    loadObj.html('没有更多最后一页');
+                                $('.pagination div').click(function () {
+                                    if (totalpage == nowpage) {
+                                        return false;
+                                    }
+                                    $.get('index.php?m=article&a=artlist&ajax=1&sort_id={$sort_id}&p=' + (nowpage + 1), function (html) {
+                                        $("#artlist .list-boxes:last").after(html);
+                                    });
+                                });
+</script>
+</body>
+</html>

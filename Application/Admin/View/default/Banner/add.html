@@ -1,0 +1,124 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="container">
+    <script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>    
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- PAGE CONTENT BEGINS -->                        
+                            <form class="form-horizontal" role="form" action="{:U('Banner/add')}" method="post">
+                                {:setParam(array('id'=>$banner['id']))}
+                                
+                                <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 图片 <span style="color:#f00;">*</span></label>
+                                        <div class="col-sm-9">
+                                                <input type="file" id="upload_picture">
+                                                <input type="hidden" name="image" id="image" value="{$banner['image']|default=''}"/>
+                                                <div class="upload-img-box">
+                                                <notempty name="$banner['image']">
+                                                    <div class="upload-pre-item"><img src="__ROOT__{$banner.image|get_cover='path'}"/></div>
+                                                </notempty>
+                                            </div>*图片尺寸在1200以上，且长宽统一比例 如：1200 x 360
+                                            <script type="text/javascript">
+                                            //上传图片
+                                            /* 初始化上传插件 */
+                                            $("#upload_picture").uploadify({
+                                                "height"          : 30,
+                                                "swf"             : "__STATIC__/uploadify/uploadify.swf",
+                                                "fileObjName"     : "download",
+                                                "buttonText"      : "上传图片",
+                                                "uploader"        : "{:U('File/uploadWebsite',array('session_id'=>session_id()))}",
+                                                "width"           : 120,
+                                                'removeTimeout'   : 1,
+                                                'fileTypeExts'    : '*.jpg; *.png; *.gif;',
+                                                "onUploadSuccess" : uploadPicture,
+                                                'onFallback' : function() {
+                                                    alert('未检测到兼容版本的Flash.');
+                                                }
+                                            });
+                                            function uploadPicture(file, data){
+                                                var data = $.parseJSON(data);
+                                                var src = '';
+                                                if(data.status){
+                                                    src = data.url || '__ROOT__' + data.path;
+                                                    $("#image").parent().find('.upload-img-box').html(
+                                                        '<div class="upload-pre-item"><img src="' + src + '"/></div>'
+                                                    );
+                                                    $("#image").val(src);
+                                                } else {
+                                                    updateAlert(data.info);
+                                                    setTimeout(function(){
+                                                        $('#top-alert').find('button').click();
+                                                        $(that).removeClass('disabled').prop('disabled',false);
+                                                    },1500);
+                                                }
+                                            }
+                                            </script>
+                                        </div>
+                                </div>
+
+                                <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 标题 <span style="color:#f00;">*</span></label>
+                                        <div class="col-sm-9">
+                                                <input type="text" name="title" value="{$banner['title']}" class="form-control" />
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 链接 <span style="color:#f00;">*</span></label>
+                                        <div class="col-sm-9">
+                                                <input type="text" name="link" value="{$banner['link']}" class="form-control" />
+                                                *可以为网站地址也可以为视频地址
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 类型 <span style="color:#f00;">*</span></label>
+                                        <div class="col-sm-9">
+                                            <select name="type">
+                                            <option value="1" <php>if($banner['type']==1){</php>selected<php>}</php>>链接</option>
+                                            <option value="2" <php>if($banner['type']==2){</php>selected<php>}</php>>视频</option>
+                                            </select>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 文字 <span style="color:#f00;">*</span></label>
+                                        <div class="col-sm-9">
+                                                <textarea type="text" name="content" class="form-control" />{$banner['content']}</textarea>
+                                                *图片上显示文字信息和时间   格式为  文字:时间，多个用 | 隔开。需要英文符号
+                                        </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 排序 <span style="color:#f00;">*</span></label>
+
+                                        <div class="col-sm-9">
+                                                <input type="text" name="sort" value="{:intval($banner['sort'])}" class="form-control" />
+                                        </div>
+                                </div>
+                                <div class="form-group">
+									<div class="checkbox col-sm-3 col-sm-offset-2">
+											
+											<label>
+											   开启/关闭 <input name="status" class="ace ace-switch ace-switch-7" type="checkbox" <php>if($banner && empty($banner['status'])){</php><php>}else{</php>checked='checked'<php>}</php> value='1'>
+											   
+											</label>
+											
+									</div>
+                                </div>
+                                <div class="clearfix form-actions">
+                                    <div class="col-md-offset-4 col-md-4">
+                                        <button class="btn btn-info btn-block ajax-post" target-form="form-horizontal" type="submit">
+                                            <i class="icon-ok bigger-110"></i>
+                                            确认
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>                        
+                        <!-- PAGE CONTENT ENDS -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.page-content -->
+        
+  
+
+</block>
+<include file="common_admin:footer" />

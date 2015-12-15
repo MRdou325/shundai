@@ -1,0 +1,130 @@
+<extend name="Public/base"/>
+<block name="head">
+	 <link rel="stylesheet" type="text/css" href="__NEW_CSS__/login.css">
+     <link rel="stylesheet" type="text/css" href="__NEW_CSS__/list.css">
+</block>
+<block name="body">
+<script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+<script src="__JS__/jquery.Jcrop.js"></script>
+<link rel="stylesheet" href="__CSS__/jquery.Jcrop.css" type="text/css" />  
+<div class="container user-center">
+    <div class="row">
+        <div class="col-md-2">
+            <include file="Public:usernav"/>
+        </div>
+        <div class="col-md-10">
+            <div class="list790">
+                <h3>修改头像</h3>
+                <div class="tag_con" id="js_tag_con">                                                                        
+                    <div class="tu_wen">
+                        <ul>
+                        <form class="form-horizontal J_ajaxForm" action="{:u('User/Cropavatar')}" method="post" enctype="multipart/form-data">
+                            <li>
+                                <input type="file" id="upload_picture">
+                                <input type="hidden" name="icon" id="icon" value="{$info['icon']|default=''}"/>
+                            </li>
+                            <li>
+                                <div style="display:none;overflow:hidden" id="div_avatar">
+                                    <div style="width:500px;height:500px;float: left;"><img src="" id="cropbox"></div>
+                                    <div style="width:100px;height:100px;overflow:hidden;">
+                                        <img src="" id="preview" />
+                                    </div>
+                                    <input type="hidden" id="imgsrc" name="img" /> 
+                                    <input type="hidden" id="txtX1" name="x1" /> 
+                                    <input type="hidden" id="txtY1" name="y1" /> 
+                                    <input type="hidden" id="txtX2" name="x2" /> 
+                                    <input type="hidden" id="txtY2" name="y2" /> 
+                                    <input type="hidden" id="txtWidth" name="width" /> 
+                                    <input type="hidden" id="txtHeight" name="height" /> 
+                                </div>
+                                <div id="avatar"><img src="{$my.avatar}"></div>
+                            </li>                                                                                                           
+                             
+                            <li>
+                                <div class="controls">
+                                    <button type="submit" class="btn">保存</button>
+                                </div>
+                            </li>
+                        </form>
+                    </div>
+                </div>							
+            </div>
+        </div>
+    </div>
+</div>
+                <script type="text/javascript">
+                    //上传图片
+                    /* 初始化上传插件 */
+                    $("#upload_picture").uploadify({
+                        "height"          : 30,
+                        "swf"             : "__STATIC__/uploadify/uploadify.swf",
+                        "fileObjName"     : "download",
+                        "buttonText"      : "选择头像",
+                        "uploader"        : "{:U('Ajax/uploadPicture',array('session_id'=>session_id()))}",
+                        "width"           : 120,
+                        'removeTimeout'   : 1,
+                        'fileTypeExts'    : '*.jpg; *.png; *.gif;',
+                        "onUploadSuccess" : uploadPicture,
+                        'onFallback' : function() {
+                            alert('未检测到兼容版本的Flash.');
+                        }
+                    });
+                    function uploadPicture(file, data){
+                        var data = $.parseJSON(data);
+                        var src = '';
+                        if(data.status){
+                            src = data.url || '__ROOT__' + data.path;
+                            console.log(data);
+                            var width = data.width;
+                            var height = data.height;
+                            $('#cropbox').attr('src', src);
+                            $('#cropbox').attr('width', width);
+                            $('#cropbox').attr('height', height);
+                            $('#preview').attr('src', src);
+                            $('#div_avatar').show();
+                            $('#imgsrc').val(data.path);
+                            $('#cropbox').Jcrop({
+                                onChange: showPreview,
+                                onSelect: showPreview,
+                                setSelect:[0,0,100,100],
+                                aspectRatio: 1
+                            });
+                        } else {
+                            updateAlert(data.info);
+                            setTimeout(function(){
+                                $('#top-alert').find('button').click();
+                                $(that).removeClass('disabled').prop('disabled',false);
+                            },1500);
+                        }
+                    }
+
+                    function showPreview(coords)
+                    {
+                        if (parseInt(coords.w) > 0)
+                        {
+                            var rx = 100 / coords.w;
+                            var ry = 100 / coords.h;
+
+                            $('#preview').css({
+                                width: Math.round(rx * 500) + 'px',
+                                height: Math.round(ry * 370) + 'px',
+                                marginLeft: '-' + Math.round(rx * coords.x) + 'px',
+                                marginTop: '-' + Math.round(ry * coords.y) + 'px'
+                            });
+                            $("#txtX1").val(coords.x); //得到选中区域左上角横坐标 
+                            $("#txtY1").val(coords.y); //得到选中区域左上角纵坐标 
+                            $("#txtX2").val(coords.x2); //得到选中区域右下角横坐标 
+                            $("#txtY2").val(coords.y2); //得到选中区域右下角纵坐标 
+                            $("#txtWidth").val(coords.w); //得到选中区域的宽度 
+                            $("#txtHeight").val(coords.h); //得到选中区域的高度 
+                        }
+                    }
+                    </script>
+<php>if($msg != ''){</php>
+<script type="text/javascript">
+    $(function(){
+        showmsg.({$msg});
+    });
+</script>
+<php>}</php>
+</block>

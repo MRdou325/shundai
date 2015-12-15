@@ -1,0 +1,57 @@
+<extend name="Public/base"/>
+<block name="head">
+	 <link rel="stylesheet" type="text/css" href="__NEW_CSS__/login.css">
+</block>
+<block name="body">
+<div class="main">
+    <div class="login-main">
+
+        <div class="login-content">
+            <div class="title">
+                <span class="hd">用户注册</span>
+                <span class="tips">尊敬的用户，欢迎您回来！</span>
+                <p class="other">已经有账号，<a href="{:U('User/login')}" rel="nofollow">立即去登录</a></p>
+            </div>
+            <div class="login-center">
+                <div class="content-landing fl">
+                    <form action="{:U('User/register')}" method="post" id="login">
+                        <ul>
+                            <li>
+                                <label class="normal">账号：</label>
+                                <input value="" class="normal-input" id="account" placeholder="用户名" name="username" autocomplete="off" type="text">
+                            </li>
+                            <li>
+                                <label class="normal">密码：</label>
+                                <input class="normal-input" placeholder="请输入密码" name="password" autocomplete="off" type="password">
+                            </li>
+                            <li>
+                                <label class="normal">确认密码：</label>
+                                <input class="normal-input" placeholder="确认密码" name="repassword" autocomplete="off" type="password">
+                            </li>
+                            <li>
+                                <label class="normal">邮箱：</label>
+                                <input class="normal-input" placeholder="请输入邮箱" name="email" autocomplete="off" type="email">
+                            </li>
+                            <li>
+                                <label class="normal">手机：</label>
+                                <input class="normal-input" placeholder="请填写手机" name="mobile" autocomplete="off" type="text">
+                            </li>
+                            <li>
+                                <label class="normal"></label>
+                                <div class="btn">
+                                    <input class="sub smt-o" value="注册" autocomplete="off" type="submit">
+                                </div>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+                <div class="login-l-img fr">
+                    <img src="__IMG__/login-bj-ad.png">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--主体 end-->
+</block>

@@ -1,0 +1,134 @@
+<extend name="Public/base"/>
+
+<block name="body">
+
+	 <link href="__NEW_CSS__/list.css" rel="stylesheet">
+	 <php>if(C('BANNER_OPEN') == 1 && count($banner) > 0){</php>
+	 <include file="Public:banner" />
+	 <php>}</php>
+	 <div class="container">
+	 	<volist name='category_List' id='cl'>
+	 	<div class="pro_item {$cl['color']}<php>if($cl["num"] < 5){</php> pro4<php>}</php>" tag="{$cl.category_name}">
+            <div class="hd">
+                <h3 <notempty name="cl['catepic_url']">style="background-image:url({$cl['catepic_url']})"</notempty>><a href="{:U('goods/cate',array('id'=>$cl['id']))}" title="{$cl.category_name}" target="_blank">{$cl.category_name}</a></h3>
+                <div class="more" style="overflow:hidden">
+                    <a class="first" href="{:U('goods/cate',array('id'=>$cl['id']))}" title="{$cl.category_name}" target="_blank">精选</a>
+                    <volist name="cl['category_child']" id="cc">
+                    	<a href="{:U('goods/cate',array('id'=>$cc['id']))}" title="{$cc.category_name}" target="_blank">{$cc.category_name}</a>
+                    </volist>
+                </div>
+                <a class="more_link" href="{:U('goods/cate',array('id'=>$cl['id']))}" target="_blank">更多&gt;&gt;</a>
+            </div>
+            <div class="bd">
+                <div class="left_img">
+                <notempty name="cl['ad_url']">
+                	<img class="scrollLoading" data-url="{$cl['ad_url']}" src="{$cl['ad_url']}" title="{$cl.category_name}" alt="{$cl.category_name}" original="{$cl['ad_url']}" style="display: inline;">
+                <else/>
+                    <img src="http://xnxwcdn.cncn.net/images/front/home30/pic_404_travel.jpg" title="{$cl.category_name}" alt="{$cl.category_name}" original="http://xnxwcdn.cncn.net/images/front/home30/pic_404_travel.jpg" style="display: inline;">
+                </notempty>
+                </div>
+                <div class="pro_list">
+                	<volist name="cl['goods']" id='good'>
+                    <div class="pro_box">
+                        <a href="{:U('goods/info', array('id' => $good['goods_id']))}" target="_blank">
+                            <div class="pro_border">
+                                <div class="img">
+                                    <img alt="{$good.title}" title="{$good.title}" class="scrollLoading" data-url="{$good.pic_url}" src="{$good.pic_url}" original="{$good.pic_url}" style="display: inline;">
+                                </div>
+                                <p>{$good.title}</p>
+                                <php>if($good["discount_price"] > 0){</php>
+                                <span class="price">
+                                    <b><i>￥</i>{$good.discount_price}</b>
+                                </span>
+                                <span class="save">
+                                    <b>省</b>￥{$good['price']-$good['discount_price']}
+                                </span>
+                                <php>}else{</php>
+                                <span class="price">
+                                    <b><i>￥</i><del>{$good.price}</del></b>
+                                </span>
+                                <php>}</php>
+                            </div>
+                            <span class="link"></span>
+                        </a>
+                    </div>
+                    </volist>
+                </div>
+            </div>
+        </div>
+	 	</volist>
+	 
+	 	<div class="col-md-9">
+	 		<div class="box540">
+                <div class="page-tab">
+                    <!-- <span class="more"><a href="about" target="_blank" id="link_more">更多&gt;&gt;</a><i></i></span> -->
+                    <volist name="defpage" id="page">
+                    	<php>if($page["type"]==1){</php>
+                    		<a class="tab" href="{:U('Page/index',array('id'=>$page['id']))}" target="_blank" data-link="about" data-val="{$page['id']}">{$page.name}</a>
+                    	<php>}else{</php>
+                    		<a class="tab" href="{:U('Article/artlist',array('id'=>$page['id']))}" target="_blank" data-link="about" data-val="{$page['id']}">{$page.name}</a>
+                    	<php>}</php>
+                    </volist>
+                </div>
+                <div class="page-con">
+                	<volist name="defpage" id="page">
+                    <div class="tu_wen J_t_con con{$page['id']}" style="display: block;">
+                    <php>if($page["type"]==1){</php>
+                    	{$page.content}
+                    <php>}else{</php>
+                    <ul>
+                    	<li><img src="{$page.pic|get_cover='path'|get_image_url}" width="100%"></li>
+                    	<volist name="page['content']" id="document">
+                    		<li>
+                    			<a href="{:U('Article/detail', array('id'=>$document["id"]))}" title="{$document["id"]}">{$document["title"]}</a>
+                    			<div class="desc">
+                    				{$document["description"]}
+                    			</div>
+                    		</li>
+                    	</volist>
+                    	<div class="clear"></div>
+                    </ul>
+                    <php>}</php>
+                    </div>
+                    </volist>
+                </div>
+            </div>
+
+            	<script>
+                    $(document).ready(function() {
+                        $(".page-con div.tu_wen").hide(); // Initially hide all content
+                        $(".page-tab a.tab:first").attr("class","tab on"); // Activate first tab
+                        $(".page-con div.tu_wen:first").fadeIn(); // Show first tab content
+                        
+                        $('.page-tab a.tab').mouseover(function(e) {
+                            e.preventDefault();        
+                            $(".page-con div.tu_wen").hide(); //Hide all content
+                            $(".page-tab a.tab").attr("class","tab"); //Reset id's
+                            $(this).attr("class","tab on"); // Activate this
+                            $('.page-con div.con' + $(this).attr('data-val')).fadeIn(); // Show content for current tab
+                        });
+                    });
+                </script>
+	 	</div>
+	 	<div class="col-md-3">
+            <div class="box240">
+                <div class="tit">
+                <strong>最近预订</strong>
+                </div>
+                <div class="txt order">
+                    <ul>
+                    <notempty name="orders">
+                    <volist name="orders" id="order">
+						<li><i></i>{$order["name"]|mb_substr=0,1,'utf-8'}**&nbsp;&nbsp;预订了仅<em>{$order['discount_price']?$order['discount_price']:$order['price']}</em>元的
+							<a href="{:U('Goods/info',array('id'=> $order["goods_id"]))}" title="{$order.goods_name}" target="_blank">{$order.goods_name}</a>
+						</li>
+					</volist>
+					<else/>
+						<li><i></i> 暂时还没有订单!</li>
+					</notempty>
+					</ul>
+                </div>
+            </div>
+	 	</div>
+	 </div>
+</block>

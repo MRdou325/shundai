@@ -1,0 +1,11 @@
+<div class="categorygoods-list">
+    <volist name='CategoryList' id='vo'>
+    <php>if($vo["level"] == 1){</php>
+        <h2 class="categorygoods_parent">
+            <a href="{:U('goods/cate',array("id"=>$vo['id']))}" title="{$vo.category_name}" <php>if($vo['id'] == $_GET['id']){</php>class="active"<php>}</php>>{$vo.category_name}</a>
+        </h2>
+    <php>}else{</php>
+        <a href="{:U('goods/cate',array("id"=>$vo['id']))}" title="{$vo.category_name}" <php>if($vo['id'] == $_GET['id']){</php>class="active"<php>}</php>>{$vo.category_name}</a>
+    <php>}</php>
+    </volist>
+</div>

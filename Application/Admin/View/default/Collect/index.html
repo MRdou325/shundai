@@ -1,0 +1,150 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    
+     <div class="col-sm-12">
+         <div class="tabbable">
+             <ul class="nav nav-tabs" id="myTab">
+                 <li class="active">
+                 <a data-toggle="tab" href="javascript:;">
+                     		采集商品
+                 </a>
+                 </li>
+             </ul>
+
+             <div class="tab-content">
+                 <div id="home" class="tab-pane in active">
+
+                    <form class="form-horizontal" role="form" action="{:U('Collect/index')}" method="post" enctype="multipart/form-data">
+                                                            <div class="form-group">
+                             <label class="col-sm-2 control-label no-padding-right" for="form-field-1">关键字<span style="color:#f00;">*</span></label>
+                             <div class="col-sm-9"><input class="col-sm-12 form-control" name="q" type="text"></div>
+                         </div>
+
+                         <div class="form-group">
+                             <label class="col-sm-2 control-label no-padding-right" for="form-field-1">API-CID<span style="color:#f00;">*</span></label>
+                             <div class="col-sm-9"><input class="col-sm-12 form-control" placeholder="关键词填写后此项可不填" name="cid" type="text"></div>
+                         </div>
+
+                         <div class="form-group">
+                             <label class="col-sm-2 control-label no-padding-right">所属栏目</label>
+                             <div class="col-sm-9">
+                                 <select class="col-sm-12" name="cate_id">
+                                    <volist name='category' id='data'>
+                                        <option value="{$data['id']}">
+                                        	<if condition="$data.p_id gt 0">
+                                        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        	</if>
+                                        	{$data['category_name']}
+                                        </option>
+                                    </volist>  
+                                  </select>
+                              </div>
+                             
+                         </div>
+
+                         <div class="form-group">
+                             <label class="col-sm-2 control-label no-padding-right" for="form-field-1">起始价格</label>
+                             <div class="col-sm-9"><input class="col-sm-12 form-control" name="start_price" type="text"></div>
+                         </div>
+
+
+                         <div class="form-group">
+                             <label class="col-sm-2 control-label no-padding-right" for="form-field-1">最高价格</label>
+                             <div class="col-sm-9"><input class="col-sm-12 form-control" name="end_price" type="text"></div>
+                         </div>
+
+
+                         <div class="form-group">
+                             <label class="col-sm-2 control-label no-padding-right" for="form-field-1">佣金比率下限</label>
+                             <div class="col-sm-9"><input class="col-sm-12 form-control" placeholder="1234表示12.34%" name="start_tk_rate" type="text"></div>
+                         </div>
+
+                         <div class="form-group">
+                             <label class="col-sm-2 control-label no-padding-right" for="form-field-1">佣金比率上限</label>
+                             <div class="col-sm-9"><input class="col-sm-12 form-control" placeholder="1234表示12.34%" name="end_tk_rate" type="text"></div>
+                         </div>
+
+                         <div class="form-group">
+                             <label class="col-sm-2 control-label no-padding-right">排序方式</label>	
+                             <div class="col-sm-9">
+                                 <select class="col-sm-12 form-control" name="sort">
+                                     <option selected="selected" value="total_sales_desc">销量从高到低</option>
+                                     <option value="total_sales_asc">销量从低到高</option>
+                                     <option value="tk_rate_desc">佣金比率从高到低</option>
+                                     <option value="tk_rate_asc">佣金比率从低到高</option>
+                                     <option value="tk_total_sales_desc">累计推广量从高到低</option>
+                                     <option value="tk_total_sales_asc">累计推广量从低到高</option>
+                                     <option value="tk_total_commi_desc">总支出佣金从高到低</option>
+                                     <option value="tk_total_commi_asc">总支出佣金从低到高</option>
+                                 </select>
+                                 <script type="text/javascript">
+                                             $("select[name='sort'] option[value='']").attr('selected', 'selected');                                                </script>
+                             </div>
+                         </div>
+                         <div class="form-group">
+                             <label class="col-sm-2 control-label no-padding-right" for="form-field-1">采集数量</label>
+                             <div class="col-sm-9"><input class="col-sm-12 form-control" placeholder="默认采集30个，一次最多采集1000个" name="num" type="text"></div>
+                         </div>
+            
+                         <div class="form-group">
+                             <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 是否天猫商城的商品<span style="color:#f00;">*</span></label>
+                             <div class="col-sm-9">
+                                 <label>
+                                     <input name="is_tmall" class="ace ace-switch ace-switch-7" value="1" type="checkbox">
+                                     <span class="lbl"></span>
+                                 </label>
+                             </div>
+                         </div>
+
+                         <div class="clearfix form-actions">
+                             <div class="col-md-offset-4 col-md-4">
+                                 <button class="btn btn-info btn-block" type="submit">
+                                     <i class="icon-ok bigger-110"></i>
+                                  		   立刻采集
+                                 </button>
+                             </div>
+                         </div>
+                     </form>
+                  </div>
+             </div>
+         </div>
+     </div>
+                
+</block>
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+        <i class="icon-double-angle-up icon-only bigger-110"></i>
+    </a>
+    <style>
+        .orange{background:orange;}
+    </style>
+<script type="text/javascript">
+    
+    $(function(){
+        $("tbody tr").click(function(){
+            var obj = $(this);
+            if(obj.find('td:first').attr('style')==''){
+                obj.find('td').attr('style','background:orange');
+            }else{
+                obj.find('td').attr('style','');
+            }
+        });
+    });
+    (function(win,doc){
+        var s = doc.createElement("script"), h = doc.getElementsByTagName("head")[0];
+        if (!win.alimamatk_show) {
+            s.charset = "utf8";
+            s.async = true;
+            s.src = "http://a.alimama.cn/tkapi.js";
+            h.insertBefore(s, h.firstChild);
+        };
+        var o = {
+            pid: "mm_43412205_9948295_33168978",/*推广单元ID，用于区分不同的推广渠道*/
+            appkey: "23189880",/*通过TOP平台申请的appkey，设置后引导成交会关联appkey*/
+            unid: "",/*自定义统计字段*/
+            type: "click" /* click 组件的入口标志 （使用click组件必设）*/
+        };
+        win.alimamatk_onload = win.alimamatk_onload || [];
+        win.alimamatk_onload.push(o);
+    })(window,document);
+</script>

@@ -1,0 +1,128 @@
+<div class="goods-list">
+<php>if($iscate == 1){</php>
+    <volist name="goods" id="cate">
+    <div class="list790">
+        <h3><span class="more"><a href="{:U('Goods/cate',array('id'=> $cate["id"]))}">更多&gt;&gt;</a></span>{$cate.category_name}</h3>
+        <div class="tag_con" id="js_tag_con">                                                                        
+            <div class="tu_wen">
+                <ul>
+                    <volist name="cate.goods" id="goods">
+                    <php>if($goods["goods_type"] == 1){</php>
+                    <li>
+                        <div class="pic">
+                            <a href="{:U('Goods/info',array('id'=> $goods["goods_id"]))}" target="_blank" title="{$goods.title}">
+                                <img class="scrollLoading" data-url="{$goods.pic_url}" src="{$goods['pic_url']|get_image_url}" border="0" alt="{$goods.title}" width="75" height="50" original="{$goods['pic_url']|get_image_url}" style="display: block;">
+                            </a>
+                        </div>
+                        <div class="type">
+                            <notempty name="goods['tid']">[{:get_topic_name($goods["tid"])}]</notempty><a href="{:U('Goods/info',array('id'=> $goods["goods_id"]))}" target="_blank">{$goods.title}</a>                
+                            <p>
+                                <span>出发城市：{$goods.city}</span>
+                                <span>行程天数：{$goods.days}</span>
+                                <span>交通方式：{$goods.traffic} &nbsp;&nbsp;<a href="{:U('Goods/info',array('id'=> $goods["goods_id"]))}">更多</a></span>
+                            </p>
+                        </div>
+                        <div class="price"><em><b>￥</b><php>if($goods['discount_price'] > 0){</php>{$goods.discount_price}<php>}else{</php>{$goods.price}<php>}</php></em>起</div>
+                    <php>}else{</php>
+                    <li class="rooms fn-clear">
+                        <div class="room-top">
+                            <div class="pic">
+                                <a href="{:U('Goods/info',array('id'=> $goods["goods_id"]))}" target="_blank" title="{$goods.title}">
+                                    <img class="scrollLoading" data-url="{$goods.pic_url}" src="{$goods['pic_url']}" width="165" height="110" alt="{$goods.title}" original="{$goods['pic_url']}" style="display: block;">
+                                </a>
+                            </div>
+                            <div class="basic">
+                                <strong><a href="{:U('Goods/info',array('id'=> $goods["goods_id"]))}" target="_blank" title="{$goods.title}">{$goods.title}</a></strong>
+                                <p>办理时间：{$goods.days}天 有效期：{$goods.aheaddays}天 最多停留：{$goods.maxdays}天</p>
+                                <p>签证面试：<php>if($goods['audition']==2){</php>不<php>}</php>需要 邀请函：<php>if($goods['invite']==2){</php>不<php>}</php>需要 受理范围：{$goods.city}</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <ul>
+                            <li class="type">
+                                <span class="w1">价格类型</span>
+                                <span>门市价</span>
+                                <span>优惠价</span>
+                                <span>服务备注</span>
+                            </li>
+                                <li id="20691_0">
+                                <span class="w1"><b>{$goods.title}</b></span>
+                                <span class="ms">￥{$goods.price}</span>
+                                <span class="xx">￥{$goods.discount_price}</span>
+                                <span title="办理入金证费用及服务费">{$goods.title}</span>
+                            </li>
+                        </ul>
+                        <php>}</php>
+                    </li>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </volist>
+<php>}else{</php>
+
+    <div class="list790">
+        <h3>{$cate.category_name}</h3>
+        <div class="tag_con" id="js_tag_con">                                                                        
+            <div class="tu_wen">
+                <ul>
+                    <volist name="goods" id="goods">
+                    <php>if($goods["goods_type"] == 1){</php>
+                    <li>
+                        <div class="pic">
+                            <a href="{:U('Goods/info',array('id'=> $goods["goods_id"]))}" target="_blank" title="{$goods.title}">
+                                <img class="scrollLoading" data-url="{$goods.pic_url}" src="{$goods['pic_url']}" border="0" alt="{$goods.title}" width="75" height="50" original="{$goods['pic_url']}" style="display: block;">
+                            </a>
+                        </div>
+                        <div class="type">
+                            <notempty name="goods['tid']">[{:get_topic_name($goods["tid"])}]</notempty><a href="{:U('Goods/info',array('id'=> $goods["goods_id"]))}" target="_blank">{$goods.title}</a>                
+                            <p>
+                                <span>出发城市：{$goods.city}</span>
+                                <span>行程天数：{$goods.days}</span>
+                                <span>交通方式：{$goods.traffic} &nbsp;&nbsp;<a href="{:U('Goods/info',array('id'=> $goods["goods_id"]))}">更多</a></span>
+                            </p>
+                        </div>
+                        <div class="price"><em><b>￥</b><php>if($goods['discount_price'] > 0){</php>{$goods.discount_price}<php>}else{</php>{$goods.price}<php>}</php></em>起</div>
+                        <php>}else{</php>
+                    <li class="rooms fn-clear">
+                        <div class="room-top">
+                            <div class="pic">
+                                <a href="{:U('Goods/info',array('id'=> $goods["goods_id"]))}" target="_blank" title="{$goods.title}">
+                                    <img class="scrollLoading" data-url="{$goods.pic_url}" src="{$goods['pic_url']}" width="165" height="110" alt="{$goods.title}" original="{$goods['pic_url']}" style="display: block;">
+                                </a>
+                            </div>
+                            <div class="basic">
+                                <strong><a href="{:U('Goods/info',array('id'=> $goods["goods_id"]))}" target="_blank" title="{$goods.title}">{$goods.title}</a></strong>
+                                <p>办理时间：{$goods.days}天 有效期：{$goods.aheaddays}天 最多停留：{$goods.maxdays}天</p>
+                                <p>签证面试：<php>if($goods['audition']==2){</php>不<php>}</php>需要 邀请函：<php>if($goods['invite']==2){</php>不<php>}</php>需要 受理范围：{$goods.city}</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <ul>
+                            <li class="type">
+                                <span class="w1">价格类型</span>
+                                <span>门市价</span>
+                                <span>优惠价</span>
+                                <span>服务备注</span>
+                                <span class="btn">&nbsp;</span>
+                            </li>
+                                <li id="20691_0">
+                                <span class="w1"><b>{$goods.title}</b></span>
+                                <span class="ms">￥{$goods.price}</span>
+                                <span class="xx">￥{$goods.discount_price}</span>
+                                <span title="办理入金证费用及服务费">{$goods.title}</span>
+                                <span class="btn"></span>
+                            </li>
+                        </ul>
+                        <php>}</php>
+                    </li>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+        <div class="page">{$page}</div>
+    </div>
+
+<php>}</php>
+</div>

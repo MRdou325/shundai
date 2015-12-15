@@ -1,0 +1,40 @@
+<extend name="Public/base"/>
+
+<block name="body">
+
+     <link href="__NEW_CSS__/list.css" rel="stylesheet">
+     <div class="box">
+        <div class="col-md-3">
+            <div id="side">
+            <volist name="category" id="category">
+                <div<php>if($category["id"] == $document['category_id']){</php> class="on"<php>}</php>><a href="{:U('Article/artlist',array('cid'=> $category["id"]))}" title="{$category.title}">{$category.title}</a></div>
+            </volist>
+            </div>
+            <include file="Public:sidenav_list" />
+        </div>
+        <div class="col-md-9">
+        <div class="goods-list">
+
+            <div class="list790">
+            <blockquote>
+                <p>
+                    {$document.title}
+                </p> <small>{$document.description}</small>
+            </blockquote>
+        <div class="tag_con" id="js_tag_con">                                                                        
+            <div class="tu_wen">
+                {$document.content}
+                <p></p>
+            </div>
+        </div>
+    </div>
+        </div>
+        </div>
+     <div class="row">
+            <div class="col-md-12">
+            
+            </div>
+      </div>
+      </div>
+     
+</block>

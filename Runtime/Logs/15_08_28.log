@@ -1,0 +1,113 @@
+[ 2015-08-28T10:34:41+08:00 ] ::1 /ke361/index.php?s=/Admin/Page/index.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.022002s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.004000s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Page/index%' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.003000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=93 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 93 )  [ RunTime:0.024001s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 93 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 93 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '' ) AND ( `pid` = 93 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_page` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `wu_page` ORDER BY `sort` desc,id desc  [ RunTime:0.001001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: meta_title D:\xampp\htdocs\KE361\Runtime\Cache\Admin\128c74af41c2d1e1b1d18d3344efbd25.php 第 5 行.
+NOTIC: [8] Undefined index: sort_id D:\xampp\htdocs\KE361\Runtime\Cache\Admin\128c74af41c2d1e1b1d18d3344efbd25.php 第 138 行.
+NOTIC: [8] Undefined index: sort_id D:\xampp\htdocs\KE361\Runtime\Cache\Admin\128c74af41c2d1e1b1d18d3344efbd25.php 第 138 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.101005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.101005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.032002s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.032002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.008001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008001s ]
+
+[ 2015-08-28T16:05:34+08:00 ] ::1 /ke361/index.php?s=/Home/Index/index.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\xampp\htdocs\KE361\Application\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `wu_member` [ RunTime:0.014001s ]
+SQL: SELECT `uid`,um.username,wu_member.last_login_time,wu_member.last_login_ip,wu_member.reg_time,`mobile`,`email`,`score`,`avatar` FROM `wu_member` LEFT JOIN wu_ucenter_member as um ON wu_member.uid = um.id  WHERE ( `uid` = '4' ) LIMIT 1   [ RunTime:0.061004s ]
+SQL: SHOW COLUMNS FROM `wu_nav` [ RunTime:0.003001s ]
+SQL: SELECT * FROM `wu_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.025001s ]
+SQL: SHOW COLUMNS FROM `wu_friendlink` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `wu_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.006001s ]
+SQL: SHOW COLUMNS FROM `wu_category` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `wu_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.031002s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `wu_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\KE361\Application\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\xampp\htdocs\KE361\Application\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `wu_search_keyword` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `wu_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_support` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `wu_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `wu_banner` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `wu_banner` WHERE ( `status` = 1 ) ORDER BY `sort` ASC  [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `wu_ad` [ RunTime:0.025001s ]
+ERR: 1146:Table 'wus.wu_ad' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wu_ad`
+SQL: SELECT * FROM `wu_ad` WHERE ( `state` = 1 ) ORDER BY `order` DESC  [ RunTime:0.001000s ]
+ERR: 1146:Table 'wus.wu_ad' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `wu_ad` WHERE ( `state` = 1 ) ORDER BY `order` DESC 
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\KE361\Application\Home\Controller\IndexController.class.php 第 29 行.
+SQL: SHOW COLUMNS FROM `wu_category_goods` [ RunTime:0.003001s ]
+SQL: SELECT * FROM `wu_category_goods` WHERE ( `status` = 1 ) AND ( `is_home` = 1 ) AND ( `p_id` = 0 ) ORDER BY sort ASC  [ RunTime:0.012000s ]
+SQL: SHOW COLUMNS FROM `wu_goods` [ RunTime:0.003000s ]
+SQL: SELECT `id`,`category_name`,`is_home` FROM `wu_category_goods` WHERE ( `status` = 1 ) AND ( `p_id` = 10 )  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `wu_goods` WHERE ( status = 1 and cate_id in (10,11,12) ) ORDER BY `sort` DESC,goods_id DESC LIMIT 8   [ RunTime:0.030001s ]
+SQL: SELECT `id`,`category_name`,`is_home` FROM `wu_category_goods` WHERE ( `status` = 1 ) AND ( `p_id` = 2 )  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\KE361\Application\Home\Controller\IndexController.class.php 第 47 行.
+SQL: SELECT * FROM `wu_goods` WHERE ( status = 1 and cate_id in (2) ) ORDER BY `sort` DESC,goods_id DESC LIMIT 4   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: category_child D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 242 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 298 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 299 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 303 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 304 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 308 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 309 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 313 行.
+NOTIC: [8] Undefined variable: articleSort D:\xampp\htdocs\KE361\Runtime\Cache\Home\e0340b9f63ad022bf382f499f0c8dafc.php 第 314 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.438026s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.438026s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.032001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.032001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.040003s ]
+INFO: [ app_end ] --END-- [ RunTime:0.040003s ]
+
+[ 2015-08-28T16:05:35+08:00 ] ::1 /ke361/index.php?s=/Admin/Page/index.html
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `wu_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.101006s ]
+SQL: SELECT `id` FROM `wu_menu` WHERE ( url like '%Page/index%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wu_menu` [ RunTime:0.002000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `wu_menu` WHERE ( id=93 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `wu_menu` WHERE ( pid = 93 )  [ RunTime:0.017001s ]
+SQL: SELECT `id`,`url` FROM `wu_menu` WHERE ( `pid` = 93 ) AND ( `hide` = 0 )  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 93 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wu_menu` WHERE ( `group` = '' ) AND ( `pid` = 93 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `wu_page` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `wu_page` ORDER BY `sort` desc,id desc  [ RunTime:0.012001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: meta_title D:\xampp\htdocs\KE361\Runtime\Cache\Admin\128c74af41c2d1e1b1d18d3344efbd25.php 第 5 行.
+NOTIC: [8] Undefined index: sort_id D:\xampp\htdocs\KE361\Runtime\Cache\Admin\128c74af41c2d1e1b1d18d3344efbd25.php 第 138 行.
+NOTIC: [8] Undefined index: sort_id D:\xampp\htdocs\KE361\Runtime\Cache\Admin\128c74af41c2d1e1b1d18d3344efbd25.php 第 138 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.153008s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.153008s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+

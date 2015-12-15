@@ -1,0 +1,150 @@
+
+<!-- 页头 -->
+<div class="top">
+	<div class="box">
+    
+       <div class="row">
+       		<div class="">
+       			<if condition="$my['uid'] gt 0">
+                <div class="col-md-8 col-md-offset-0 top-l">
+                	<span>欢迎来到{:C('WEB_SITE_NAME')}</span>
+                    <a href="{:U('User/logout')}"><i class="glyphicon glyphicon-log-out"></i> &nbsp;退出</a>
+                	<a href="{:U('User/index')}"><i class="glyphicon glyphicon-user"></i> &nbsp;{$my['username']}</a>
+                </div>
+                <else/>
+                <div class="col-md-8 col-md-offset-0 top-l">
+                	<span>欢迎来到{:C('WEB_SITE_NAME')}</span>           	
+                	<a href="{:U('User/register')}" rel="nofollow">免费注册</a>
+                	<a href="{:U('User/login')}" rel="nofollow">登录</a>
+                </div>
+                
+            	</if>
+       			<div class="col-md-3 col-md-offset-8 top-r">
+       				<a id="Favorite">加入收藏</a>
+       				<span >预订热线：{:C("WEB_SITE_TEL")}</span>
+       			</div>
+       			<script type="text/javascript">
+       			$(document).ready(function () { 
+       				$("#Favorite").click(function() {
+					    var title = document.title;
+					    var url = location.href;
+					    if (window.sidebar) {
+					        window.sidebar.addPanel(title, url, "");
+					    } else if (document.all) {
+					        window.external.AddFavorite(url, title);
+					    } else {
+					        return true;
+					    }
+					});
+       			});
+       			</script>
+       			<div class="clear"></div>
+       		</div>
+       </div>
+      </div>
+</div>
+<div class="box">
+    <div class="row">
+        <div class="col-md-5">
+			<div class="logo">
+				<a class="" href="/" title="首页">
+					<img title="{:C('WEB_SITE_NAME')}" alt="{:C('WEB_SITE_NAME')}" src="{:C('WEB_SITE_LOGO')}">
+				</a>
+			</div>
+		</div>
+        <div class="col-md-5" style="padding-top:20px;">
+            <form action="{:U('Search/index')}" method="POST"> 
+				<div class="input-group">
+					  <input type="text" class="form-control" name="keywords" id="keywords" placeholder="请输入目的地或关键词...">
+					  <span class="input-group-btn">
+						<button class="btn btn-danger" type="submit">搜索</button>
+					  </span>
+				</div>
+        <div class="searchkey">热门搜索：
+        <volist name="searchkeyword" id="search">
+            <a href="{:U('Search/index',array("keywords"=>$search["name"]))}">{$search.name}</a>
+            </volist>
+            </div>
+            </form>
+        </div>
+		
+        <div class="col-md-2">
+            <a title="每天10点开抢" class="update" href="javascript:;" target="_blank" rel="nofollow"></a>
+            <a title="职业买手砍价" class="lowest" href="javascript:;" target="_blank" rel="nofollow"></a>
+            <a title="商品验货质检" class="check" href="javascript:;" target="_blank" rel="nofollow"></a>
+        </div>
+    </div>
+</div>
+<nav class="nav navbar-inverse radius-0">
+    <div class="navbar-inner">
+	    <div class="box">
+	       
+	        <div id="navbar" class="collapse navbar-collapse">
+	        	<ul class="nav navbar-nav">
+	            	<php>if($ishome){</php>
+                  <li class="all-cate">
+                    <a>全部旅游分类</a>
+                    <ul class="all-cate-box">
+                      
+                      <li>
+                        <a>旅游线路</a>
+                        <notempty name="categorygoods['travel']">
+                        <div class="sub-nav-0">
+                          <volist name="categorygoods['travel']" id="travel">
+                            <div class="sub-nav-{$travel.level}">
+                              <h3><a href="{:U('goods/cate',array('id'=>$travel['id']))}">{$travel.category_name}</a></h3>
+                              <notempty name="travel['child']">
+                              <div class="sub-nav-{$travel.level}-box">
+                                <volist name="travel['child']" id="cate">
+                                  <span><a href="{:U('goods/cate',array('id'=>$cate['id']))}">{$cate.category_name}</a></span>
+                                </volist>
+                                <div class="clear"></div>
+                              </div>
+                              </notempty>
+                            </div>
+                          </volist>
+                        </div>
+                        </notempty>
+                      </li>
+                      <notempty name="categorygoods['cate']">
+                        <volist name="categorygoods['cate']" id="cates">
+                          <li>
+                            <a href="{:U('goods/cate',array('id'=>$cates['id']))}">{$cates.category_name}</a>
+                            <notempty name="cates['child']">
+                            <div class="sub-nav-0">
+                              <volist name="cates['child']" id="travel">
+                                <div class="sub-nav-{$travel.level}">
+                                  <h3><a href="{:U('goods/cate',array('id'=>$travel['id']))}">{$travel.category_name}</a></h3>
+                                  <notempty name="travel['child']">
+                                  <div class="sub-nav-{$travel.level}-box">
+                                    <volist name="travel['child']" id="cate">
+                                      <span><a href="{:U('goods/cate',array('id'=>$cate['id']))}">{$cate.category_name}</a></span>
+                                    </volist>
+                                    <div class="clear"></div>
+                                  </div>
+                                  </notempty>
+                                </div>
+                              </volist>
+                            </div>
+                            </notempty>
+                          </li>
+                        </volist>
+                      </notempty>
+                    </ul>
+                  </li>
+                <php>}</php>
+	                <notempty name="nav">
+	                    <volist name="nav" id="headnav">
+	                    	<php>if($headnav['pid'] == 0 && $headnav['head'] ==1){</php>
+	                        <li >
+	                            <a id="nav-{$headnav.id}"  href="{$headnav.url|get_nav_url}" target="<eq name='headnav.target' value='1'>_blank<else/>_self</eq>">{$headnav.title}</a>
+	                        </li>
+	                        <php>}</php>
+	                     </volist>
+	                </notempty>
+	            </ul>
+	        </div>
+	    </div>
+    </div>
+ </nav>   
+<!-- /页头 -->

@@ -1,0 +1,68 @@
+<extend name="Public/base"/>
+<block name="head">
+	 <link rel="stylesheet" type="text/css" href="__NEW_CSS__/login.css">
+     <link rel="stylesheet" type="text/css" href="__NEW_CSS__/list.css">
+</block>
+<block name="body">
+<div class="container user-center">
+    <div class="row">
+        <div class="col-md-2">
+            <include file="Public:usernav"/>
+        </div>
+        <div class="col-md-10">
+            <div class="list790">
+                <h3>用户信息</h3>
+                <div class="tag_con" id="js_tag_con">                                                                        
+                    <div class="tu_wen">
+                        <ul>
+                        <form class="form-horizontal J_ajaxForm" action="{:u('profile/edit_post')}" method="post">
+                            <li>
+                                <label class="control-label col-md-3" for="">用户名</label>
+                                <div class="col-md-3">
+                                    <input type="text" readonly class="form-control" id="" value="{$my['username']}">
+                                </div>
+                            </li>
+                            
+                            <li>
+                                <label class="control-label col-md-3" for="">邮箱</label>
+                                <div class="col-md-3">
+                                    <input type="text" readonly class="form-control" id="" value="{$my['email']}">
+                                </div>
+                            </li>
+                            
+                            <li>
+                                <label class="control-label col-md-3" for="">注册时间</label>
+                                <div class="col-md-3">
+                                    <input type="text" readonly class="form-control" id="" value="{:date('Y-m-d H-i-s',$my['regtime'])}">
+                                </div>
+                            </li>
+                            
+                            <li>
+                                <label class="control-label col-md-3" for="">上次登录时间</label>
+                                <div class="col-md-3">
+                                    <input type="text" readonly class="form-control" id="" value="{:date('Y-m-d H:i:s',$my['last_login_time'])}">
+                                </div>
+                            </li>
+                            
+                            <li>
+                                <label class="control-label col-md-3" for="">上次登录IP</label>
+                                <div class="col-md-3">
+                                    <input type="text" readonly class="form-control" id="" value="{$my['last_login_ip']}">
+                                </div>
+                            </li>
+                            
+                            <li>
+                                <label class="control-label col-md-3" for="">积分</label>
+                                <div class="col-md-3">
+                                    <input type="text" readonly class="form-control" id="" value="{:intval($my['score'])}">
+                                </div>
+                            </li>
+                            
+                        </form>
+                    </div>
+                </div>							
+            </div>
+        </div>
+    </div>
+</div>
+</block>

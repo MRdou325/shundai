@@ -1,0 +1,47 @@
+/***** 日期选择 *****/
+.date_select {width:275px;display:none;font-size: 12px;background-color: white;border:1px solid #ccc;z-index: 100;line-height: 12px;box-shadow: 1px 1px 3px #ddd; padding-bottom: 20px;}
+.date_select_yymm {position: relative;padding:10px 0;background:#f9f9f9;height:50px;line-height: 50px;color:#333;font-size: 14px;}
+.date_select_yymm .date_select_yymm_wrap{position:absolute;top:10px;left:8px;width:180px;}
+.date_select_yymm i {position: absolute;top: 8px;border: 7px solid #f9f9f9;cursor: pointer;height:0px;width:0px;line-height:1px;font-size:1px;}
+.date_select_yymm i.next{border-left:7px solid #666;left:142px;}
+.date_select_yymm i.prev{border-right:7px solid #666;left:24px;text-align: center;}
+.date_select_yymm i.next:hover{border-left:7px solid #ffaa2e;transition: 0.2s;}
+.date_select_yymm i.prev:hover{border-right:7px solid #ffaa2e;transition: 0.2s;}
+.date_select_yymm .next_year{position:absolute;top: 8px;height:15px;width:28px;left:154px;}
+.date_select_yymm .next_year i.first{border-left:7px solid #666;right:0px;top:0px;z-index:2;}
+.date_select_yymm .next_year i.second{border-left:7px solid #666;right:6px;top:0px;}
+.date_select_yymm .prev_year{position:absolute;top: 8px;height:15px;width:28px;left:0px;}
+.date_select_yymm .prev_year i.first{border-right:7px solid #666;left:0px;top:0px;z-index:2;}
+.date_select_yymm .prev_year i.second{border-right:7px solid #666;left:6px;top:0px;}
+.date_select_yymm .next_year:hover i{border-left:7px solid #ffaa2e;transition: 0.2s;}
+.date_select_yymm .prev_year:hover i{border-right:7px solid #ffaa2e;transition: 0.2s;}
+.date_select_yymm span{display:block;height:30px;line-height: 30px;text-align: center;}
+.date_select_dd {padding: 0px 0px 15px 15px;margin-top: 5px;font-family: "Comic Sans MS", cursive;color: #888;}
+.date_select_dd span{width: 35px;height: 25px;padding: 4px 0;text-align: center;float: left;position: relative;line-height:25px}
+.date_select_dd span i{position: absolute;right:0px;top:11px;height:13px;width:1px;background: #eee;}
+.date_select_dd a, .date_select_dd b {width: 36px;height: 28px;padding: 4px 0;text-align: center;float: left;border: 1px solid #EEE;margin: -1px 0 0 -1px;position: relative;line-height:25px}
+.date_select_dd a{color:#333;}
+/*.date_select_dd a.cur{background-color:#ffc35b; color:#fff}*/
+.date_select_dd a:hover{background-color: #ffc35b;color: #fff;text-decoration:none;cursor: pointer; background-position:1px 1px}
+.date_select_dd a.disable{background-color:#fff; color:#999; cursor: default;}
+.date_select_dd a.today{background-color:#ffc35b; color:#FFF}
+.date_select_clear{transition: 0.3s linear all;height:24px;line-height: 24px;color:#333!important;width: 50px;background: #fff;border: 1px solid #e7e7e7;border-radius: 2px;position: absolute;top:12px;right: 15px;text-align: center;}
+.date_select_clear:hover{box-shadow: 0 0 3px #f18b40;text-decoration:none;}
+
+
+.pro_name{text-align: right;}
+.h_auto{margin: 8px 0;}
+.pro_name i {
+color: #fe7700;
+margin: 0 5px;
+font-family: 微软雅黑;
+font-size: 22px;
+}
+.h_auto .del_btn {
+display: inline-block;
+height: 29px;
+line-height: 29px;
+margin: 0 10px;
+color: #FE7700;
+font-size: 12px;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{:C('WEB_SITE_TITLE')}</title>
+   <meta name="keywords" content="{:C('WEB_SITE_KEYWORD')}" />
+    <meta name="description" content="{:C('WEB_SITE_DESCRIPTION')}">
+    <include file="Public:head" />
+    <link href="__CSS__/index.css" rel="stylesheet">
+    <link href="__CSS__/list.css" rel="stylesheet">
+</head>
+
+<body class="body-white">
+    <include file="Public:nav" />
+    <div class="main">
+    <h2 style="font-size:16px;">{$topic['topic_name']}</h2>
+        <ul class="goods-list clear">
+            <volist name='goodsList' id='vo'>
+            <li>
+                <div class="list-good buy">
+                    <div class="good-pic">
+                        <a target="_blank" class="pic-img" href="{:U('goods/detail',array('id'=>$vo['goods_id']))}">
+                            <img class="lazy good-pic" src="{$vo.pic_url}" alt="{$vo.title}" style="display: inline;">
+                        </a>
+                    </div>
+                    <h3 class="good-title">
+                        <a target="_blank" href="{:U('goods/detail',array('id'=>$vo['goods_id']))}">{$vo.title}</a>
+                        <div style="display:none;" class="icon-all">
+                        </div>
+                    </h3>
+                    <div class="good-price">
+                        <span class="price-current">
+                            <em>￥</em>
+                            <php>if($vo['discount_price']>0){echo bcmul($vo['discount_price'], 1, 1);}else{echo bcmul($vo['price'], 1, 1);}</php>
+                        </span>
+                        <div class="btn buy m-buy">
+                            <a rel="nofollow" target="_blank" href="{:U('goods/detail',array('id'=>$vo['goods_id']))}">
+                                <eq name="vo.goods_type" value="tmall">
+                                    <em class="m-icon"></em>
+                                    <span>天猫</span>
+                                </eq>
+                                <eq name="vo.goods_type" value="">
+                                    <em class="t-icon"></em>
+                                    <span>淘宝</span>
+                                </eq>
+                                <eq name="vo.goods_type" value="qugoumai">
+                                    <span>去购买</span>
+                                </eq>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- like -->
+                    <a href="javascript:;" onclick="favor({$vo['goods_id']})" title="加入收藏" class="J_favorite_btn y-like my-like active">
+                        <i class="like-ico l-active"><span class="heart_left"></span><span class="heart_right"></span></i>
+                    </a>
+                    <!-- end like -->
+                    <div style="display:block" class="box-hd">
+                    </div>
+                </div>
+            </li>
+        	</volist>
+        </ul>
+        <div class="pagination clear">
+        <div class="row">
+        	<div class="col-md-12">
+            <button class="btn btn-info" style="width:100%" id="getmore"><php>if($totalPage>=2){</php>查看更多&gt;&gt;<php>}else{</php>下面就木有了，亲~<php>}</php></button>
+            </div>
+        </div>
+            
+        </div>
+    </div>
+    <include file="Public:footer" />
+    <include file="Public:scripts" />
+    <script src="__JS__/slippry.min.js"></script>
+    <script>
+    $("img.lazy").lazyload({threshold:0,failure_limit:30,placeholder : "__IMG__/blank.png",});
+    
+    $(".goods-list li").hover(
+    function(){
+       //当鼠标放上去的时候,程序处理
+       $(this).addClass("hover1 hover");
+    },
+    function(){
+       //当鼠标离开的时候,程序处理
+       $(this).removeClass("hover1 hover");
+    });
+	$(function(){
+	page=1;
+	totalPage = {$totalPage};
+	$("#getmore").click(function(){
+		if(page<totalPage){
+			$(this).attr('disabled','disabled');
+			$(this).addClass('disabled');
+			$(this).html('正在努力获取中...');
+			tid = {$topic['tid']};
+			$.get('{:U("topic/topiclist")}',{p:page+1,tid:tid,ajax:1},function(html){
+				$('.goods-list li:last').after(html);
+				if(page==totalPage){
+					$("#getmore").attr('disabled','disabled');
+					$("#getmore").addClass('disabled');
+					$("#getmore").html('下面就木有了，亲~');
+				}else{
+					$("#getmore").removeAttr('disabled');$("#getmore").removeClass('disabled');$("#getmore").html('查看更多&gt;&gt;');
+				}
+			});
+		}
+		
+	});
+	})
+
+</script>
+</body>
+
+</html>

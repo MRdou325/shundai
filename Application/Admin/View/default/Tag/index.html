@@ -1,0 +1,54 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <script type="text/javascript" src="__JS__/js.js"></script>
+       
+                   <div class="data-table table-striped">
+                           
+
+
+                            <div class="tab-content">
+                                <div id="home" class="tab-pane in active">
+                                    <form action="{:U('Index/sortList',array('op'=>'order'))}" method="post">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered table-hover">
+                                                <thead>
+                                                    <tr class="color428bca">
+                                                        <th width="50">排序</th>
+                                                        <th>分类名称</th>                                                                        
+                                                        <th class="center">状态</th>
+                                                       
+                                                        <th>操作</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                <notempty name="TagModel">
+                                                <volist name="TagModel" id="data">
+                                                    <tr class="pointer even" title="">
+                                                        <td><input type="text" name="order_{$data['sort_id']}" value="{$data['sort']}" style="width:30px;padding:0 5px;margin:0"/></td>
+                                                        <td><php>if($data['pic_url'] != ''){</php><img height="20" src="{$data['pic_url']}"><php>}</php>{$data['name']}</a></td>
+                                                        <td class="center"><a href="{:U('Tag/status',array('id'=>$data['id']))}">{$data['status']==1?'<font color="green">开启</font>':'<font color="red">关闭</font>'}</a></td>
+
+                                                        <td>
+                                                            <a href="{:U('Tag/add',array('id'=>$data['id']))}">编辑</a>
+                                                            |
+                                                            <a onclick="return confirm('确定删除')" href="{:U('Tag/del',array('id'=>$data['id']))}" title="删除">删除</a>
+                                                        </td>
+                                                    </tr>
+                                                </volist>
+                                                </tbody>
+                                            </table>
+                                           
+                                            <else/>
+                                            <tr><td colspan="3" class="text-center"><span class="empty"><i>aOh! 暂时还没有内容! </i></span></td></tr>
+                                            </tbody>
+                                            </table>
+
+                                            </notempty>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+</block>
+<include file="common_admin:footer" />

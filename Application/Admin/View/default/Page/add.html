@@ -1,0 +1,116 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="container">   
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- PAGE CONTENT BEGINS -->                        
+                            <form class="form-horizontal" role="form" action="{:U('Page/add')}" method="post">
+                                {:setParam(array('id'=>$id))}
+
+                                <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 名称 <span style="color:#f00;">*</span></label>
+                                        <div class="col-sm-9">
+                                                <input type="text" name="name" value="{$page['name']}" class="form-control" />
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 首页显示 <span style="color:#f00;">*</span></label>
+                                        <div class="col-sm-9">
+                                            <select name="ishome">
+                                                <option value="0" <php>if($page['ishome']==0){</php>selected<php>}</php>>否</option>
+                                                <option value="1" <php>if($page['ishome']==1){</php>selected<php>}</php>>是</option>
+                                            </select>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> seo标题 <span style="color:#f00;">*</span></label>
+                                        <div class="col-sm-9">
+                                                <input type="text" name="seo_title" value="{$page['seo_title']}" class="form-control" />
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> seo关键词 <span style="color:#f00;">*</span></label>
+                                        <div class="col-sm-9">
+                                                <input type="text" name="seo_keyword" value="{$page['seo_keyword']}" class="form-control" />
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> seo描述 <span style="color:#f00;">*</span></label>
+                                        <div class="col-sm-9">
+                                                <input type="text" name="seo_description" value="{$page['seo_description']}" class="form-control" />
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <link rel="stylesheet" href="__ADDONS__/kindeditor/themes/default/default.css" />
+                                    <link rel="stylesheet" href="__ADDONS__/kindeditor/plugins/code/prettify.css" />
+                                    <script charset="utf-8" src="__ADDONS__/kindeditor/kindeditor.js"></script>
+                                    <script charset="utf-8" src="__ADDONS__/kindeditor/lang/zh_CN.js"></script>
+                                    <script charset="utf-8" src="__ADDONS__/kindeditor/plugins/code/prettify.js"></script>
+                                    <script>
+                                        KindEditor.ready(function (K) {
+                                            var editor1 = K.create('textarea[name="content"]', {
+                                                cssPath: '__ADDONS__/kindeditor/plugins/code/prettify.css',
+                                                uploadJson: '__ADDONS__/kindeditor/php/upload_json.php',
+                                                fileManagerJson: '__ADDONS__/kindeditor/php/file_manager_json.php',
+                                                allowFileManager: true,
+                                                afterChange: function (){
+                                                    var self = this;
+                                                    self.sync();
+                                                },
+                                                afterCreate: function () {
+                                                    var self = this;
+                                                    K.ctrl(document, 13, function () {
+                                                        self.sync();
+                                                        K('form[name=example]')[0].submit();
+                                                    });
+                                                    K.ctrl(self.edit.doc, 13, function () {
+                                                        self.sync();
+                                                        K('form[name=example]')[0].submit();
+                                                    });
+                                                }
+                                            });
+                                            prettyPrint();
+                                        });
+                                    </script>
+                                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 内容 <span style="color:#f00;">*</span></label>
+                                        <div class="col-sm-9">
+                                                <textarea type="text" name="content" class="form-control" />{$page['content']}</textarea>
+                                        </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 排序 <span style="color:#f00;">*</span></label>
+
+                                        <div class="col-sm-9">
+                                                <input type="text" name="sort" value="{:intval($page['sort'])}" class="form-control" />
+                                        </div>
+                                </div>
+                                <div class="form-group">
+									<div class="checkbox col-sm-3 col-sm-offset-2">
+											
+											<label>
+											   开启/关闭 <input name="status" class="ace ace-switch ace-switch-7" type="checkbox" <php>if($page && empty($page['status'])){</php><php>}else{</php>checked='checked'<php>}</php> value='1'>
+											   
+											</label>
+											
+									</div>
+                                </div>
+                                <div class="clearfix form-actions">
+                                    <div class="col-md-offset-4 col-md-4">
+                                        <button class="btn btn-info btn-block ajax-post" target-form="form-horizontal" type="submit">
+                                            <i class="icon-ok bigger-110"></i>
+                                            确认
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>                        
+                        <!-- PAGE CONTENT ENDS -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.page-content -->
+        
+  
+
+</block>
+<include file="common_admin:footer" />

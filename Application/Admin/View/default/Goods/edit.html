@@ -1,0 +1,533 @@
+<extend name="Public/base"/>
+  
+<block name="body">
+    <!-- ace styles -->
+
+
+	<!--[if lte IE 8]>
+	  <link rel="stylesheet" href="__CSS__/ace-ie.min.css" />
+	<![endif]-->
+<link href="__CSS__/date_price.css" rel="stylesheet" type="text/css">
+<link href="__CSS__/date_select.css" rel="stylesheet" type="text/css">
+<script src="__JS__/jquery-migrate1.2.1.js"></script>
+<script type="text/javascript">
+     var jQuery_1_10_2 = $;
+   
+</script>
+
+               <script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>           
+                        <form class="form-horizontal" role="form" action="{:U('Goods/edit')}" method="post" enctype="multipart/form-data">
+                          {:setParam(array('goods_id'=>$goods['goods_id']))}
+                          <p><h2>基本信息</h2></p>
+                          <hr>
+                           <div class="form-group">
+	                          <label class="col-sm-2 control-label no-padding-right" for="form-field-1">图片<span style="color:#f00;">*</span></label>
+							  <div class="col-sm-9">
+									<input type="file" id="upload_picture_pic_url">
+									<input type="hidden" name="pic_url" id="pic_url" value="{$goods[pic_url]}"/>
+									<div class="upload-img-box">
+									<notempty name="goods.pic_url">
+										<div class="upload-pre-item"><img src="{$goods[pic_url]}"/></div>
+									</notempty>
+									</div>
+							  </div>	
+								<script type="text/javascript">
+								//上传图片
+							    /* 初始化上传插件 */
+								$("#upload_picture_pic_url").uploadify({
+							        "height"          : 30,
+							        "swf"             : "__STATIC__/uploadify/uploadify.swf",
+							        "fileObjName"     : "download",
+							        "buttonText"      : "上传图片",
+							        "uploader"        : "{:U('File/uploadPicture',array('session_id'=>session_id()))}",
+							        "width"           : 120,
+							        
+							        "removeTimeout"	  : 1,
+							        "fileTypeExts"	  : "*.jpg; *.png; *.gif;",
+							        "onUploadSuccess" : uploadPicture,
+							        "onFallback" : function() {
+							            alert('未检测到兼容版本的Flash.');
+							        }
+							    });
+								function uploadPicture(file, data){
+							    	var data = $.parseJSON(data);
+							    	var src = '';
+							    	
+							        if(data.status){
+							        	
+							        	$("#pic_url").val(data.path);
+							        	src = data.url || '__ROOT__' + data.path
+							        	$("#pic_url").parent().find('.upload-img-box').html(
+							        		'<div class="upload-pre-item"><img src="' + src + '"/></div>'
+							        	);
+							        } else {
+							        	updateAlert(data.info);
+							        	setTimeout(function(){
+							                $('#top-alert').find('button').click();
+							                $(that).removeClass('disabled').prop('disabled',false);
+							            },1500);
+							        }
+							    }
+								</script>
+							</div>
+                           
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right" for="form-field-1">名称<span style="color:#f00;">*</span></label>
+                                <div class="col-sm-8"><input class="col-sm-12 form-control" type="text" name="title" value="{$goods['title']}"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">类型<span style="color:#f00;">*</span></label>   
+                                <div class="col-sm-2">
+                                    <select class="col-sm-12 form-control" name="goods_type" id="type">
+                                        <option value="1" <php>if($goods['goods_type']==1){</php>selected<php>}</php>>普通线路</option>   
+                                        <option value="2" <php>if($goods['goods_type']==2){</php>selected<php>}</php>>签证</option>                                     
+                                    </select>
+                                </div>
+                                <label class="col-sm-1 control-label no-padding-right">选择分类<span style="color:#f00;">*</span></label>
+                                <div class="col-sm-2">
+                                    <select class="col-sm-12 form-control" name="cate_id">
+                                        <option value="0">选择分类</option>
+                                        <volist name='category' id='data'>
+                                        <option value="{$data['id']}" <php>if($data['id'] == $goods["cate_id"]){</php>selected<php>}</php>>
+                                        	<for start="1" end="$data.level">
+                                        		<php>if($i+1 == $data['level']){</php>&nbsp;|-<php>}else{</php>&nbsp;&nbsp;&nbsp;<php>}</php>
+                                        	</for>	
+                                        		{$data['category_name']}</option>
+                                        </volist>                                        
+                                    </select>
+                                    <script type='text/javascript'>
+                                        $("select[name='sort_id'] option[value='<php>echo $goods[sort_id]</php>']").attr('selected','selected');
+                                    </script>
+                                </div>
+                            
+                                <label class="col-sm-1 control-label no-padding-right">选择专题<span style="color:#f00;">*</span></label>
+                                <div class="col-sm-2">
+                                    <select class="col-sm-12 form-control" name="tid">
+                                        <option value="0">选择专题</option>
+                                        <volist name='topic' id='data'>
+                                        <option value="{$data['tid']}">{$data['name']}</option>
+                                        </volist>                                        
+                                    </select>
+                                    <script type='text/javascript'> 
+                                        $("select[name='tid'] option[value='<php>echo $goods[tid]</php>']").attr('selected','selected');
+                                    </script>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">原价<span style="color:#f00;">*</span></label>	
+                                <div class="col-sm-2"><input class="col-sm-10 form-control" type="text" name="price" value="{$goods['price']}">元</div>
+                            
+                                <label class="col-sm-1 control-label no-padding-right">折扣价格<br></label>	
+                                <div class="col-sm-2"><input class="col-sm-11 form-control" type="text" name="discount_price" value="{$goods['discount_price']}">元</div>
+                            
+
+                            <div class="form-group type-1" <php>if($goods['goods_type']==2){</php>style="display:none"<php>}</php>>
+                                <label class="col-sm-1 control-label no-padding-right">儿童价</label> 
+                                <div class="col-sm-2"><input class="col-sm-11 form-control" type="text" name="child_price" value="{$goods['child_price']}">元</div>
+                            </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right" id="city"><php>if($goods['goods_type']==2){</php>所属领区<php>}else{</php>出发城市<php>}</php></label> 
+                                <div class="col-sm-2"><input class="col-sm-12 form-control" type="text" name="city" value="{$goods['city']}"></div>
+
+                                <label class="col-sm-1 control-label no-padding-right" id="aheaddays"><php>if($goods['goods_type']==2){</php>有效期<php>}else{</php>提前预定<php>}</php></label> 
+                                <div class="col-sm-2"><input class="col-sm-11 form-control" type="text" name="aheaddays" value="{$goods['aheaddays']}">天</div>
+
+                                <label class="col-sm-1 control-label no-padding-right" id="days"><php>if($goods['goods_type']==2){</php>办理时间<php>}else{</php>行程天数<php>}</php></label> 
+                                <div class="col-sm-2"><input class="col-sm-11 form-control" type="text" name="days" value="{$goods['days']}">天</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right" id="traffic"><php>if($goods['goods_type']==2){</php>受理范围<php>}else{</php>交通方式<php>}</php></label> 
+                                <div class="col-sm-2">
+                                    <div class="type-2" <php>if($goods['goods_type']==1){</php>style="display:none"<php>}</php>>
+                                        <input class="col-sm-12 form-control" type="text" name="traffic2" value="{$goods['traffic']|implode=""}">
+                                    </div>
+                                    <div class="type-1" <php>if($goods['goods_type']==2){</php>style="display:none"<php>}</php>>
+                                        <select name="traffic[]" class="col-sm-6">
+                                            <option value="1" <php>if($goods['traffic'][0] == 1){</php>selected<php>}</php>>飞机去</option>
+                                            <option value="2" <php>if($goods['traffic'][0] == 2){</php>selected<php>}</php>>火车去</option>
+                                            <option value="3" <php>if($goods['traffic'][0] == 3){</php>selected<php>}</php>>汽车去</option>
+                                            <option value="4" <php>if($goods['traffic'][0] == 4){</php>selected<php>}</php>>轮船去</option>
+                                            <option value="5" <php>if($goods['traffic'][0] == 5){</php>selected<php>}</php>>动车去</option>
+                                            <option value="6" <php>if($goods['traffic'][0] == 6){</php>selected<php>}</php>>高铁去</option>
+                                        </select>
+                                        <select name="traffic[]" class="col-sm-6">
+                                            <option value="1" <php>if($goods['traffic'][1] == 1){</php>selected<php>}</php>>飞机回</option>
+                                            <option value="2" <php>if($goods['traffic'][1] == 2){</php>selected<php>}</php>>火车回</option>
+                                            <option value="3" <php>if($goods['traffic'][1] == 3){</php>selected<php>}</php>>汽车回</option>
+                                            <option value="4" <php>if($goods['traffic'][1] == 4){</php>selected<php>}</php>>轮船回</option>
+                                            <option value="5" <php>if($goods['traffic'][1] == 5){</php>selected<php>}</php>>动车回</option>
+                                            <option value="6" <php>if($goods['traffic'][1] == 6){</php>selected<php>}</php>>高铁回</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            
+
+                            <div class="form-group col-sm-3 type-2" <php>if($goods['goods_type']==2){</php>style="display:block"<php>}else{</php>style="display:none"<php>}</php>>
+                                <label class="col-sm-4 control-label no-padding-right">最多停留</label> 
+                                <div class="col-sm-8"><input class="col-sm-11 form-control" type="text" name="maxdays" value="{$goods['maxdays']}">天</div>
+                            </div>
+
+                            <div class="form-group col-sm-2 type-2" <php>if($goods['goods_type']==2){</php>style="display:block"<php>}else{</php>style="display:none"<php>}</php>>
+                                <label class="col-sm-6 control-label no-padding-right">面试</label> 
+                                <div class="col-sm-6">
+                                    <select class="col-sm-12 form-control" name="audition">
+                                        <option value="1" <php>if($goods['audition']==1){</php>selected<php>}</php>>是</option>   
+                                        <option value="2" <php>if($goods['audition']==2){</php>selected<php>}</php>>否</option>                                     
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-sm-2 type-2" <php>if($goods['goods_type']==2){</php>style="display:block"<php>}else{</php>style="display:none"<php>}</php>>
+                                <label class="col-sm-6 control-label no-padding-right">邀请函</label> 
+                                <div class="col-sm-6">
+                                    <select class="col-sm-12 form-control" name="invite">
+                                        <option value="1" <php>if($goods['invite']==1){</php>selected<php>}</php>>是</option>   
+                                        <option value="2" <php>if($goods['invite']==2){</php>selected<php>}</php>>否</option>                                     
+                                    </select>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">标签<span style="color:#f00;">*</span></label>
+                                <div class="col-sm-9">
+                                    <volist name="tags" id="tag">
+                                        <input type="checkbox" name="tag[]" value="{$tag.id}" <php>if(in_array($tag['id'], $mytag)){</php>checked<php>}</php>>{$tag.name}&nbsp;&nbsp;&nbsp;
+                                    </volist>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">状态<span style="color:#f00;">*</span></label>
+                                <div class="col-sm-2">
+                                    <select class="col-sm-12 form-control" name="status">
+                                        <option selected="selected" value="1">显示</option>
+                                        <option value="0">隐藏</option>
+                                    </select>
+                                    <script type='text/javascript'>
+                                        $("select[name='state'] option[value='<php>echo $goods[state]</php>']").attr('selected','selected');
+                                    </script>
+                                </div>
+
+                                <label class="col-sm-1 control-label no-padding-right">排序<span style="color:#f00;">*</span></label>
+                                <div class="col-sm-2">
+                                    <input class="col-sm-12 form-control" type="text" name="sort" value="{$goods[goods_sort]}">
+                                </div>
+                            </div>
+                            <div class="type-1" <php>if($goods['goods_type']==2){</php>style="display:none"<php>}</php>>
+                            <p><h2>价格信息</h2></p>
+                            <hr>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">价格说明 </label>
+                                <div class="col-sm-8">
+                                    <textarea class="col-sm-12" name="item_price_body" id="J_ForumPostCon" data-name="kind_body" placeholder="说两句~~" style="height:300px;visibility:hidden;">{:stripslashes($goods['item_price_body'])}</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">线路报价 </label>
+                                <div class="col-sm-8">
+                                    <div class="pro_input date_price">
+                                        <input type="hidden" value="2" id="earlier_date">
+                                        <input type="hidden" value="{:date("Y-m-d")}" id="today">
+                                        <input type="hidden" value="{:date("Y-m-d", strtotime("+3 Month"))}" id="expire_day">
+                                        <input type="hidden" value="{$goods["date_price"]}" id="date_price_data" name="date_price_data">
+                                        <a href="javascript:;" class="small_btn J_clear_all_price fr">清除所有报价</a>
+                                        <ul class="tab_ul">
+                                            <li id="J_batch" class="on">批量添加价格</li>
+                                            <li id="J_range">添加指定时间段价格</li>
+                                            <li id="J_quick">快速编辑模式</li>
+                                        </ul>
+                                                            <div class="date_table" id="J_date_table">
+                                                                    <div class="operate_area J_operate_area">
+                                                <div class="J_batch_area">
+                                                    <div class="tp">
+                                                        <label class="input_checkbox"><input type="checkbox" class="J_week_all_select"/>天天发团</label>
+                                                        <label class="input_checkbox"><input type="checkbox" class="J_week_select" value="1"/>周一</label>
+                                                        <label class="input_checkbox"><input type="checkbox" class="J_week_select" value="2"/>周二</label>
+                                                        <label class="input_checkbox"><input type="checkbox" class="J_week_select" value="3"/>周三</label>
+                                                        <label class="input_checkbox"><input type="checkbox" class="J_week_select" value="4"/>周四</label>
+                                                        <label class="input_checkbox"><input type="checkbox" class="J_week_select" value="5"/>周五</label>
+                                                        <label class="input_checkbox"><input type="checkbox" class="J_week_select" value="6"/>周六</label>
+                                                        <label class="input_checkbox"><input type="checkbox" class="J_week_select" value="0"/>周日</label>
+                                                    </div>
+                                                    <div class="bt">
+                                                        <span>优惠价：<em>*</em></span><label class="input_text w_115"><input type="text" class="J_input_limit" data-limit_type="digits" name="price_cncn" value="0" maxlength="6"/></label>
+                                                        <span>儿童价：</span><label class="input_text w_115"><input type="text" class="J_input_limit" data-limit_type="digits" name="price_cncn_child" value="0"  maxlength="6"/>
+                                                        </label><a href="javascript:;" class="add_btn tag_btn m_l10" id="J_batch_add_by_week">添加</a>
+                                                    </div>
+                                                </div>
+                                                <div class="J_date_area" style="display:none;">
+                                                    <div class="tp">
+                                                        <span>指定时间段：<em>*</em></span>
+                                                        <label class="input_text input_calendar"><input type="text" data-min_date="{:date("Y-m-d")}" data-max_date="{:date("Y-m-d", strtotime("+2 month"))}"/></label>
+                                                        <span>至</span>
+                                                        <label class="input_text input_calendar"><input type="text" data-min_date="{:date("Y-m-d", strtotime("+1 days"))}" data-max_date="{:date("Y-m-d", strtotime("+2 month"))}"/></label>
+                                                    </div>
+                                                    <div class="tp" style="margin-left:90px">
+                                                        <label class="input_checkbox"><input type="checkbox" class="J_week_select1" value="1" checked />周一</label>
+                                                        <label class="input_checkbox"><input type="checkbox" class="J_week_select1" value="2" checked />周二</label>
+                                                        <label class="input_checkbox"><input type="checkbox" class="J_week_select1" value="3" checked />周三</label>
+                                                        <label class="input_checkbox"><input type="checkbox" class="J_week_select1" value="4" checked />周四</label>
+                                                        <label class="input_checkbox"><input type="checkbox" class="J_week_select1" value="5" checked />周五</label>
+                                                        <label class="input_checkbox"><input type="checkbox" class="J_week_select1" value="6" checked />周六</label>
+                                                        <label class="input_checkbox"><input type="checkbox" class="J_week_select1" value="0" checked />周日</label>
+                                                    </div>
+                                                    <div class="bt" style="padding-left:80px;">
+                                                        <span>优惠价：<em>*</em></span><label class="input_text w_115"><input type="text" class="J_input_limit" data-limit_type="digits" value="0"/></label>
+                                                        <span class="m_l10">儿童价：</span><label class="input_text w_115"><input type="text" class="J_input_limit" data-limit_type="digits" value="0"/>
+                                                        </label><a href="javascript:;" class="m_l10 tag_btn" id="J_batch_add_by_dateandweek" style="float:right">添加</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <script id="date_price_template" type="text/date_price">
+                                                <div class="month_row" style="z-index:$z_index">
+                                                    <div class="sd">
+                                                        <p class="year">$year年</p>
+                                                        <p class="month">$month月</p>
+                                                    </div>
+                                                    <div class="hd" $is_display>
+                                                        <ul>
+                                                            <li>星期日</li>
+                                                            <li>星期一</li>
+                                                            <li>星期二</li>
+                                                            <li>星期三</li>
+                                                            <li>星期四</li>
+                                                            <li>星期五</li>
+                                                            <li>星期六</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="bd">
+                                                        <ul class="clearfix">$lis</ul>
+                                                        <div class="add_price_dialog J_add_price_dialog">
+                                                            <p>date</p>
+                                                            <input type="text" class="youhui J_quick_edit_input"/>
+                                                            <input type="text" class="child J_quick_edit_input"/>
+                                                            <a class="ok_btn" href="javascript:;">确定</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div></div>
+
+                            <p><h2>内容信息</h2></p>
+                            <hr>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">内容</label>
+
+                                <link rel="stylesheet" href="__ADDONS__/kindeditor/themes/default/default.css" />
+                                <link rel="stylesheet" href="__ADDONS__/kindeditor/plugins/code/prettify.css" />
+                                <script charset="utf-8" src="__ADDONS__/kindeditor/kindeditor.js"></script>
+                                <script charset="utf-8" src="__ADDONS__/kindeditor/lang/zh_CN.js"></script>
+                                <script charset="utf-8" src="__ADDONS__/kindeditor/plugins/code/prettify.js"></script>
+                                <div class="col-sm-8">
+                                    <ul id="myTab" class="nav nav-tabs">
+                                       <li <php>if($goods['body_type'] ==1){</php>class="active"<php>}</php>><a href="#home" data-name="home" data-toggle="tab" data-value="1">基本内容</a></li>
+                                       <li <php>if($goods['body_type'] ==2){</php>class="active"<php>}</php> id="type-1" <php>if($goods['goods_type']==2){</php>style="display:none"<php>}</php>><a href="#J_edit_by_day_wrap" data-name="J_edit_by_day_wrap" data-toggle="tab" data-value="2">行程内容</a></li>
+                                    </ul>
+                                    <input type="hidden" id="body_type" name="body_type" value="{$goods[body_type]}">
+                                    <div id="myTabContent" class="tab-content">
+                                        <div class="tab-pane fade <php>if($goods['body_type'] ==1){</php>in active<php>}</php>" id="home">
+                                            <textarea class="col-sm-12" name="item_body" data-name="kind_body" style="height:500px;visibility:hidden;">{:stripslashes($goods['item_body'])}</textarea>
+                                        </div>
+                                        <div class="tab-pane fade <php>if($goods['body_type'] ==2){</php>in active<php>}</php>" id="J_edit_by_day_wrap">
+                                        <volist name="goods['days_body']" id="days_body" key="k">
+                                            <div class="row h_auto no_hover">
+                                                <label for="" class="col-sm-2 pro_name">第<i>{$k}</i>天：</label>
+                                                <div class="col-sm-6">
+                                                    <label class="input_text w_470">
+                                                        <input class="col-sm-12 form-control" name="xingcheng[{$k-1}][name]" type="text" value="{$days_body.name}" maxlength="30">
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <a href="javascript:;" class="J_del_xingcheng del_btn">删除第{$k}天行程</a>
+                                                </div>
+                                            </div>
+                                            <div class="row h_auto no_hover">
+                                                <label for="" class="col-sm-2 pro_name">行程安排：<em>*</em></label>
+                                                <div class="col-sm-9">
+                                                    <textarea class="col-sm-12" style="height:250px;visibility:hidden;" name="xingcheng[{$k-1}][content]" data-name="kind_body" placeholder="说两句~~" id="J_xingcheng_con">{$days_body.content}</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="row h_auto no_hover">
+                                                <label for="" class="col-sm-2 pro_name">用餐：</label>
+                                                <div class="col-sm-8">
+                                                    <label class="input_checkbox" title="">
+                                                        <input name="xingcheng[{$k-1}][eat][0]" type="checkbox" value="1" <php>if(array_key_exists(0, $days_body["eat"]) && $days_body["eat"]["0"]==1){</php>checked<php>}</php>>早餐
+                                                    </label><label class="input_checkbox" title="">
+                                                        <input name="xingcheng[{$k-1}][eat][1]" type="checkbox" value="1" <php>if(array_key_exists(1, $days_body["eat"]) && $days_body["eat"]["1"]==1){</php>checked<php>}</php>>中餐
+                                                    </label><label class="input_checkbox" title="">
+                                                        <input name="xingcheng[{$k-1}][eat][2]" type="checkbox" value="1" <php>if(array_key_exists(2, $days_body["eat"]) && $days_body["eat"]["2"]==1){</php>checked<php>}</php>>晚餐
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="row h_auto no_hover">
+                                                <label for="" class="col-sm-2 pro_name">住宿：</label>
+                                                <div class="col-sm-8">
+                                                    <label class="input_text w_135">
+                                                        <input class="col-sm-4 form-control" name="xingcheng[{$k-1}][sleep]" type="text" value="{$days_body.sleep}" maxlength="30">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </volist>
+                                            <div class="row no_hover">
+                                                <div class="pro_input">
+                                                <a href="javascript:;" class="tag_btn" id="J_add_xingcheng_days">添加第{$goods.days_body_num}天行程</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                                    KindEditor.ready(function (K) {
+                                        var editor1 = K.create('textarea[data-name="kind_body"]', {
+                                            cssPath: '__ADDONS__/kindeditor/plugins/code/prettify.css',
+                                            uploadJson: '__ADDONS__/kindeditor/php/upload_json.php',
+                                            fileManagerJson: '__ADDONS__/kindeditor/php/file_manager_json.php',
+                                            width:"100%",
+                                            allowFileManager: true,
+                                            afterChange: function (){
+                                                var self = this;
+                                                self.sync();
+                                            }
+                                        });
+                                        prettyPrint();
+                                    });
+                                </script>
+                            <p><h2>SEO信息</h2></p>
+                            <hr>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">seo标题</label>    
+                                <div class="col-sm-9"><input class="col-sm-12 form-control" type="text" name="seo_title" value="{$goods['seo_title']}"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">seo关键字</label>   
+                                <div class="col-sm-9"><input class="col-sm-12 form-control" type="text" name="seo_keywords" value="{$goods['seo_keywords']}"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">seo内容</label>    
+                                <div class="col-sm-9"><input class="col-sm-12 form-control" type="text" name="seo_description" value="{$goods['seo_description']}"></div>
+                            </div>
+                            <div class="clearfix form-actions">
+                                <div class="col-md-offset-4 col-md-4">
+                                    <button class="btn btn-info btn-block ajax-post" target-form="form-horizontal" type="submit">
+                                        <i class="icon-ok bigger-110"></i>
+                                        确认
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#type').change(function(){
+            var val = $(this).val();
+            if(val == 2)
+            {
+                $("div.type-2").show();
+                $("div.type-1").hide();
+                $("li#type-1").hide();
+                $("#city").text("所属领区");
+                $("#aheaddays").text("有效期");
+                $("#days").text("办理时间");
+                $("#traffic").text("受理范围");
+                $("#myTabContent").children().attr("class", "tab-pane fade");
+                $("#home").attr("class", "tab-pane fade in active");
+            }
+            else
+            {
+                $("div.type-2").hide();
+                $("div.type-1").show();
+                $("li#type-1").show();
+                $("#city").text("出发城市");
+                $("#aheaddays").text("提前预定");
+                $("#days").text("行程天数");
+                $("#traffic").text("交通方式");
+            }
+        });
+
+        $("#myTab a").click(function(){
+            var id = $(this).attr("data-name");
+            var type = $(this).attr("data-value");
+            $("#body_type").val(type);
+            $("#myTab li").attr("class", "");
+            $(this).parent("li").attr("class", "active");
+            $("#myTabContent").children().attr("class", "tab-pane fade");
+            $("#"+id).attr("class", "tab-pane fade in active");
+        });
+    });
+</script> 
+<script id="J_xingcheng_tem" type="text/xingcheng">
+    <div class="row h_auto no_hover">
+        <label for="" class="col-sm-2 pro_name">第<i>$day</i>天：</label>
+        <div class="col-sm-6">
+            <input name="xingcheng[$index][name]" class="col-sm-12 form-control" type="text" value="" maxlength="30"/>
+        </div>
+        <div class="col-sm-2">
+            <a href="javascript:;" class="J_del_xingcheng del_btn">删除第$day天行程</a>
+        </div>
+    </div>
+    <div class="row h_auto no_hover">
+        <label for="" class="col-sm-2 pro_name">行程安排：<em>*</em></label>
+        <div class="col-sm-8">
+            <textarea class="input_textarea J_editor col-sm-12" name="xingcheng[$index][content]" style="height:250px;visibility:hidden;" data-name="kind_body" placeholder="说两句~~"></textarea>
+        </div>
+    </div>
+    <div class="row h_auto no_hover">
+        <label for="" class="col-sm-2 pro_name">用餐：</label>
+        <div class="col-sm-8">
+            <label class="input_checkbox" title="">
+                <input name="xingcheng[$index][eat][0]" type="checkbox" value="1" style="top:8px">早餐
+            </label><label class="input_checkbox" title="">
+                <input name="xingcheng[$index][eat][1]" type="checkbox" value="1" style="top:8px">中餐
+            </label><label class="input_checkbox" title="">
+                <input name="xingcheng[$index][eat][2]" type="checkbox" value="1" style="top:8px">晚餐
+            </label>
+        </div>
+    </div>
+    <div class="row h_auto no_hover">
+        <label for="" class="col-sm-2 pro_name">住宿：</label>
+        <div class="col-sm-9">
+            <label class="input_text w_135">
+                <input name="xingcheng[$index][sleep]" class="col-sm-12 form-control" type="text" value="" maxlength="30"/>
+            </label>
+        </div>
+    </div>                                
+    </script>
+<script src="__JS__/alert.js"></script>
+<script src="__JS__/jquery_date.js"></script>
+<script src="__JS__/line_form3.js"></script>
+<script src="__JS__/date_price.js?v=1409888150"></script>
+ </block>
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+        <i class="icon-double-angle-up icon-only bigger-110"></i>
+    </a>
+</div><!-- /.main-container -->
+<script>
+    $(function () {
+        $('input[type="file"]').ace_file_input({
+            no_file: 'No File ...',
+            btn_choose: 'Choose',
+            btn_change: 'Change',
+            droppable: false,
+            onchange: null,
+            thumbnail: false //| true | large
+                    //whitelist:'gif|png|jpg|jpeg'
+                    //blacklist:'exe|php'
+                    //onchange:''
+                    //
+        });
+        highlight_subnav('{:U('Goods/edit')}');
+    });
+    
+
+</script>

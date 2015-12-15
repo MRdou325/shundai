@@ -1,0 +1,70 @@
+<div id="banner-box">
+<div id="banner" style="width: {:C('BANNER_WIDTH')}px;height: {:C('BANNER_HEIGHT')}px">
+<php>if(count($banner) ==1){</php>
+	<volist name="banner" id="data">
+	<img title="{$data.title}" alt="{$data.title}" src="{$data.image}"/>
+	</volist>
+<php>}else{</php>
+<link rel="stylesheet" href="__CSS__/orman.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="__CSS__/nivo-slider.css" type="text/css" media="screen" />
+	<div id="slider" class="nivoSlider">
+		<volist name="banner" id="data" key="k">
+			<php>if($data["link"]){</php><a href="{$data.link|get_nav_url}" title="{$data.title}"><php>}</php>
+			<img src="{$data.image}" alt="{$data.title}" title="{$data.title}" />
+			</a>
+		</volist>
+	</div>
+
+<script type="text/javascript" src="__JS__/jquery.nivo.slider.pack.js"></script>
+<script type="text/javascript">
+$(window).load(function() {
+	$('#slider').nivoSlider({
+		controlNav:true
+	});
+});
+</script>
+<php>}
+if(false){</php>
+	<script type='text/javascript' src='__JS__/modernizr.min.js'></script>
+	<script type='text/javascript'>
+	/* <![CDATA[ */
+	var CSSettings = {"pluginPath":"__MODULE__"};
+	/* ]]> */
+	</script>
+	<script type='text/javascript' src='__JS__/cute.slider.js'></script>
+	<script type='text/javascript' src='__JS__/cute.transitions.all.js'></script>
+	<link rel="stylesheet" href="__CSS__/5icool.org.css" />
+	<div class="c-860 c-demoslider">
+		<div id="cuteslider_3_wrapper" class="cs-circleslight">
+			<div id="cuteslider_3" class="cute-slider" data-width="960" data-height="420" data-overpause="<php>if(C('BANNER_OVERPAUSE')==1){</php>true<php>}else{</php>false<php>}</php>">
+				<ul data-type="slides">
+				<volist name="banner" id="data" key="k">
+					<li data-delay="5" data-src="5" data-trans3d="tr6,tr17,tr22,tr23,tr29,tr27,tr32,tr34,tr35,tr53,tr54,tr62,tr63,tr4,tr13,tr45" data-trans2d="tr3,tr8,tr12,tr19,tr22,tr25,tr27,tr29,tr31,tr34,tr35,tr38,tr39,tr41"><img src="{$data.image}" data-src="{$data.image}" data-thumb="{$data.image}">
+						<php>if($data["link"]!=''){</php><a data-type="<php>if($data["type"]==1){</php>link<php>}else{</php>video<php>}</php>" href="{$data.link}" target="_blank"></a><php>}</php>
+						<ul data-type="captions">
+						<volist name="data['content']" id="value" key="i">
+						<li class="caption_slider2_layer{$k+1}_sublayer{$i+1}" data-effect="fade" data-delay="{$value.time}">{$value.txt}</li>
+						</volist>
+						</ul>
+					</li>
+				</volist>
+				</ul>
+				<ul data-type="controls">
+					<li data-type="captions"></li>
+					<li data-type="link"></li>
+					<li data-type="video"></li>
+					<li data-type="slideinfo"></li>
+					<php>if(C('BANNER_CIRCLETIMER')==1){</php><li data-type="circletimer"></li><php>}</php>
+					<php>if(C('BANNER_PREVIOUS')==1){</php><li data-type="previous"></li><php>}</php>
+					<php>if(C('BANNER_NEXT')==1){</php><li data-type="next"> </li><php>}</php>
+					<php>if(C('BANNER_BARTIMER')==1){</php><li data-type="bartimer"></li><php>}</php>
+					<php>if(C('BANNER_THUMBLIST')==1){</php><li data-type="slidecontrol" data-thumb="true" data-thumbalign="up"></li><php>}</php>
+				</ul>
+			</div>
+			<div class="cute-shadow"><img src="__IMG__/shadow.png" alt="shadow"></div>
+		</div>
+	</div>
+	<script type="text/javascript">var cuteslider3 = new Cute.Slider();cuteslider3.setup("cuteslider_3" , "cuteslider_3_wrapper", "__CSS__/slider-style.css");cuteslider3.api.addEventListener(Cute.SliderEvent.CHANGE_START, function(event) { });cuteslider3.api.addEventListener(Cute.SliderEvent.CHANGE_END, function(event) { });cuteslider3.api.addEventListener(Cute.SliderEvent.WATING, function(event) { });cuteslider3.api.addEventListener(Cute.SliderEvent.CHANGE_NEXT_SLIDE, function(event) { });cuteslider3.api.addEventListener(Cute.SliderEvent.WATING_FOR_NEXT, function(event) { });</script>
+<php>}</php>
+</div>
+</div>

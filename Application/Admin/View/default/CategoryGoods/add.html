@@ -1,0 +1,201 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="container">
+        <script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- PAGE CONTENT BEGINS -->                        
+                            <form class="form-horizontal" role="form" action="{:U('CategoryGoods/add')}" method="post">
+                                {:setParam(array('id'=>$category['id'],'p_id'=>$p_id))}
+                              
+                                <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 分类名称 <span style="color:#f00;">*</span></label>
+                                        <div class="col-sm-9">
+                                                <input type="text" name="category_name" value="{$category['category_name']}" class="form-control" />
+                                        </div>
+                                </div>
+
+                                <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 颜色选择 <span style="color:#f00;">*</span></label>
+                                        <div class="col-sm-9">
+                                            <select name="color" style="color:#fff,background:#000">
+                                                <option <php>if($category['color'] == 'green'){</php>selected<php>}</php> value="green" style="background:#7ac406">===绿色===</option>
+                                                <option <php>if($category['color'] == 'green_b'){</php>selected<php>}</php> value="green_b" style="background:#2cbaa2">===深绿===</option>
+                                                <option <php>if($category['color'] == 'blue_b'){</php>selected<php>}</php> value="blue_b" style="background:#01a1eb">===暗蓝===</option>
+                                                <option <php>if($category['color'] == 'blue_c'){</php>selected<php>}</php> value="blue_c" style="background:#00a9f7">===蓝色===</option>
+                                                <option <php>if($category['color'] == 'blue'){</php>selected<php>}</php> value="blue" style="background:#4775f7">===深蓝===</option>
+                                                <option <php>if($category['color'] == 'pink'){</php>selected<php>}</php> value="pink" style="background:#ff6d9a">===粉色===</option>
+                                                <option <php>if($category['color'] == 'yellow'){</php>selected<php>}</php> value="yellow" style="background:#fab40c">===黄色===</option>
+                                                <option <php>if($category['color'] == 'purple'){</php>selected<php>}</php> value="purple" style="background:#b57dea">===紫色===</option>
+                                            </select>
+                                        </div>
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1">分类图标</label>
+                                    <div class="col-sm-9">
+                                        <input type="file" id="upload_picture">
+                                        <input type="hidden" name="catepic_url" id="catepic" value="{$category['catepic_url']|default=''}"/>
+                                        <div class="upload-img-box">
+                                            <notempty name="category['catepic_url']">
+                                                <div class="upload-pre-item"><img src="__ROOT__{$category.catepic_url}"/></div>
+                                            </notempty>
+                                        </div>
+                                    </div>
+                                    <script type="text/javascript">
+                                    //上传图片
+                                    /* 初始化上传插件 */
+                                    $("#upload_picture").uploadify({
+                                        "height"          : 30,
+                                        "swf"             : "__STATIC__/uploadify/uploadify.swf",
+                                        "fileObjName"     : "download",
+                                        "buttonText"      : "上传图片",
+                                        "uploader"        : "{:U('File/uploadcatePicture',array('session_id'=>session_id()))}",
+                                        "width"           : 120,
+                                        'removeTimeout'   : 1,
+                                        'fileTypeExts'    : '*.jpg; *.png; *.gif;',
+                                        "onUploadSuccess" : uploadPicture,
+                                        'onFallback' : function() {
+                                            alert('未检测到兼容版本的Flash.');
+                                        }
+                                    });
+                                    function uploadPicture(file, data){
+                                        var data = $.parseJSON(data);
+                                        var src = '';
+                                        if(data.status){
+                                            src = data.url || data.path;
+                                            $("#catepic").val(src);
+                                            $("#catepic").parent().find('.upload-img-box').html(
+                                                '<div class="upload-pre-item"><img src="' + '__ROOT__' + src + '"/></div>'
+                                            );
+                                        } else {
+                                            updateAlert(data.info);
+                                            setTimeout(function(){
+                                                $('#top-alert').find('button').click();
+                                                $(that).removeClass('disabled').prop('disabled',false);
+                                            },1500);
+                                        }
+                                    }
+                                    </script>
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1">广告图片</label>
+                                    <div class="col-sm-9">
+                                        <input type="file" id="upload_adpicture">
+                                        <input type="hidden" name="ad_url" id="ad" value="{$category['ad_url']|default=''}"/>
+                                        <div class="upload-img-box">
+                                            <notempty name="category['ad_url']">
+                                                <div class="upload-pre-item"><img src="__ROOT__{$category.ad_url}"/></div>
+                                            </notempty>
+                                        </div>
+                                    </div>
+                                    <script type="text/javascript">
+                                    //上传图片
+                                    /* 初始化上传插件 */
+                                    $("#upload_adpicture").uploadify({
+                                        "height"          : 30,
+                                        "swf"             : "__STATIC__/uploadify/uploadify.swf",
+                                        "fileObjName"     : "download",
+                                        "buttonText"      : "上传图片",
+                                        "uploader"        : "{:U('File/uploadcatePicture',array('session_id'=>session_id()))}",
+                                        "width"           : 120,
+                                        'removeTimeout'   : 1,
+                                        'fileTypeExts'    : '*.jpg; *.png; *.gif;',
+                                        "onUploadSuccess" : uploadPicture,
+                                        'onFallback' : function() {
+                                            alert('未检测到兼容版本的Flash.');
+                                        }
+                                    });
+                                    function uploadPicture(file, data){
+                                        var data = $.parseJSON(data);
+                                        var src = '';
+                                        if(data.status){
+                                            src = data.url || data.path;
+                                            $("#ad").val(src);
+                                            $("#ad").parent().find('.upload-img-box').html(
+                                                '<div class="upload-pre-item"><img src="' + '__ROOT__' + src + '"/></div>'
+                                            );
+                                        } else {
+                                            updateAlert(data.info);
+                                            setTimeout(function(){
+                                                $('#top-alert').find('button').click();
+                                                $(that).removeClass('disabled').prop('disabled',false);
+                                            },1500);
+                                        }
+                                    }
+                                    </script>
+                                </div>
+                                
+                                <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 分类排序 <span style="color:#f00;">*</span></label>
+
+                                        <div class="col-sm-9">
+                                                <input type="text" name="order" value="{:intval($category['order'])}" class="form-control" />
+                                        </div>
+                                </div>
+
+                                <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 是否首页显示 <span style="color:#f00;">*</span></label>
+
+                                        <div class="col-sm-9">
+                                            <select name="is_home">
+                                                 <option value="0" <php>if($category["is_home"]==0){</php>selected<php>}</php>>否</option>
+                                                 <option value="1" <php>if($category["is_home"]==1){</php>selected<php>}</php>>是</option>
+                                            </select>
+                                        </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 首页显示数量 <span style="color:#f00;">*</span></label>
+
+                                        <div class="col-sm-9">
+                                                <input type="text" name="home_num" value="{:intval($category['home_num'])}" class="form-control" />
+                                                (仅对第一级分类有效)
+                                        </div>
+                                </div>
+
+                                <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 旅游线路 <span style="color:#f00;">*</span></label>
+
+                                        <div class="col-sm-9">
+                                            <select name="istravel">
+                                                 <option value="0" <php>if($category["istravel"]==0){</php>selected<php>}</php>>否</option>
+                                                 <option value="1" <php>if($category["istravel"]==1){</php>selected<php>}</php>>是</option>
+                                            </select>
+                                            (仅对第一级分类有效，显示在首页的分类导航条)
+                                        </div>
+                                </div>
+                                
+                                <div class="form-group">
+											
+										<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 分类状态 <span style="color:#f00;">*</span></label>
+
+										<div class="col-sm-9">
+                                            <select name="state">
+                                                 <option value="0" <php>if($category["status"]==0){</php>selected<php>}</php>>关闭</option>
+                                                 <option value="1" <php>if($category["status"]==1){</php>selected<php>}</php>>开启</option>
+                                            </select>
+                                        </div>
+                                </div>
+                                <div class="clearfix form-actions">
+                                    <div class="col-md-offset-4 col-md-4">
+                                        <button class="btn btn-info btn-block ajax-post" target-form="form-horizontal" type="submit">
+                                            <i class="icon-ok bigger-110"></i>
+                                            确认
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>                        
+                        <!-- PAGE CONTENT ENDS -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.page-content -->
+        
+  
+
+</block>
+<include file="common_admin:footer" />

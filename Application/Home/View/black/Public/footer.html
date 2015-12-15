@@ -1,0 +1,96 @@
+<!-- 页脚 -->
+<div id="footer">
+<div class="box">
+<div class="container">
+	<div class="row">
+		<notempty name="nav">
+	        <volist name="nav" id="footnav">
+	        <php>if($footnav['pid'] == 0 && $footnav['foot'] == 1){</php>
+	            <div class="col-md-1">
+	                <a id="nav-{$footnav.id}"  href="{$footnav.url|get_nav_url}" target="<eq name='footnav.target' value='1'>_blank<else/>_self</eq>">{$footnav.title}</a>
+	            </div>
+	        <php>}</php>
+	        </volist>
+	    </notempty>
+	</div>
+    <div class="row">
+		<dl class="col-md-3">
+			<dt>{$articleSort[0]['sort_name']}</dt>
+			<?php $d0 = $article[$articleSort[0]['sort_id']];?>
+			<volist name='d0' id='data'>
+				<dd><a target="_blank" href="{:U('article/detail',array('aid'=>$data['aid']))}"><i></i>{:cutstr($data['title'],28)}</a></dd>
+			</volist>     
+		</dl>
+		<dl class="col-md-3">
+			<dt>{$articleSort[1]['sort_name']}</dt>
+			<?php $d1 = $article[$articleSort[1]['sort_id']];?>
+			<volist name='d1' id='data'>
+			<dd><a target="_blank" href="{:U('article/detail',array('aid'=>$data['aid']))}"><i></i>{:cutstr($data['title'],28)}</a></dd>
+			</volist>
+		</dl>
+		<dl class="col-md-3">
+			<dt>{$articleSort[2]['sort_name']}</dt>
+			<?php $d2 = $article[$articleSort[2]['sort_id']];?>
+			<volist name='d2' id='data'>
+			<dd><a target="_blank" href="{:U('article/detail',array('aid'=>$data['aid']))}"><i></i>{:cutstr($data['title'],28)}</a></dd>
+			</volist>
+		</dl>
+		<dl class="col-md-3">
+			<dt>{$articleSort[3]['sort_name']}</dt>
+			<?php $d3 = $article[$articleSort[3]['sort_id']];?>
+			<volist name='d3' id='data'>
+			<dd><a target="_blank" href="{:U('article/detail',array('aid'=>$data['aid']))}"><i></i>{:cutstr($data['title'],28)}</a></dd>
+			</volist>
+		</dl>    
+    </div>
+    <div class="row">
+    	<div class="col-md-5">Copyright © 2015 <a class="" href="/" title="{:C('WEB_SITE_NAME')}">{:C('WEB_SITE_NAME')}</a>  {:C('WEB_SITE_ICP')}</div>
+	</div>	
+    <div class="row">
+    	<div class="col-md-12">{:C('TONGJI')}</div>
+    </div>
+    <notempty name="flink">
+	<div class="row">
+			<span class="col-md-2">友情链接：</span>
+			
+			<foreach name="flink" item="vo">
+				<span class="col-md-2">
+					<a href="{$vo.url}" <php>if($vo['blank'] == 1){</php>target="_blank"<php>}</php>><php>if($vo['pic_url'] != ''){</php><img height="30" src="{$vo.pic_url}" title="{$vo.title}" alt="{$vo.title}"><php>}else{</php>{$vo.title}<php>}</php></a>
+				</span>
+			</foreach>
+				
+	</div>
+	</notempty>
+</div>
+<div style="display: none;" class="side_right fix">
+        <div class="con">
+            <a class="trigger go-top" href="javascript:;">
+                <p>回到<br>顶部</p>
+                <span><i class="glyphicon glyphicon-triangle-top" aria-hidden="true" style="font-size:24px;"></i></span>
+            </a>
+    </div>
+</div>
+</div>
+</div>
+<php>if(C('WEB_SUPPORT_OPEN') == 1){</php>
+<div id="tool" class="">
+	<div id="tool_content" style="display: block;">
+		<div class="tc tool_c_top"></div>
+		<div class="tc tool_c_content">
+			<h3 class="ck online">&nbsp;</h3>
+			<h3 class="ck support">咨询客服</h3>
+			<volist name="support" id="qq">
+			<h3 class="ck qq"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$qq.number}&site=qq&menu=yes">{$qq.name}</a></h3>
+			</volist>
+		</div>
+		<div class="tc tool_c_tb"></div>
+		<div class="tc tool_c_content">
+			<h3 class="ck tel">&nbsp;</h3>
+			<span class="ck phone">{:C("WEB_SITE_TEL")}</span>
+		</div>
+		<div class="tc tool_c_bottom"></div>
+	</div>
+	<a id="aFloatTools_Show" class="ck" href="javascript:void(0);" onclick="javascript:$('#tool_content').hide(1000);	$('#aFloatTools_Show').attr('style','display:none');$('#aFloatTools_Hide').attr('style','display:block');return false;" style="display:block">&nbsp;</a>
+	<a id="aFloatTools_Hide" class="ck" style="display:none" href="javascript:void(0);" onclick="javascript:$('#tool_content').show(1000);	$('#aFloatTools_Show').attr('style','display:block');$('#aFloatTools_Hide').attr('style','display:none');return false;">&nbsp;</a>
+</div>
+<php>}</php>

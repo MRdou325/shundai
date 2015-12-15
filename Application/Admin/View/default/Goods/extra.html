@@ -1,0 +1,90 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="cf">
+		<div class="fl">
+            <a class="btn" href="{:U('Goods/extraedit',array("goods_id" => $goods_id))}">新 增</a>
+            <!--<a class="btn ajax-post" href="{:U('Goods/status?s=1')}" target-form="ids">上架</a>
+           
+            <button class="btn ajax-post confirm" url="{:U('Goods/del')}" target-form="ids">删 除</button>-->
+        </div>
+
+        <!-- 高级搜索 -->
+		<div class="search-form fr cf">
+			<div class="">
+				<select class="" name="cate_id">
+                                        <option value="0">选择栏目</option>
+                                        <volist name='category' id='data'>
+                                        <option value="{$data['id']}">
+                                        	<if condition="$data.p_id gt 0">
+                                        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        	</if>	
+                                        		{$data['category_name']}</option>
+                                        </volist>                                        
+                                    </select>
+				<a class="sch-btn" href="javascript:;" id="search" url="{:U('index')}"><i class="btn-search"></i></a>
+			</div>
+		</div>
+    </div>
+        
+        
+    <div class="data-table table-striped">
+           
+            <table class="">
+                <thead>
+                    <tr >
+                       <th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
+                        <th>信息名称</th>
+                        <th>排序</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <notempty name="extralist">
+                <volist name="extralist" id="data">
+                    <tr class="pointer even" title="">
+                        <td><input class="ids" type="checkbox" name="id[]" value="{$data.id}" /></td>
+                        <td>{$data['name']}</a></td>
+                        <td>{$data['sort']}</td>
+                        <td><a class="confirm ajax-get" href="{:U('Goods/extrastatus',array('id'=>$data['id'],'status'=>$data['status']))}" title="">{$data['status']?'<font color="green">开启</font>':'<font color="red">关闭</font>'}</a></td>
+                        <td> 
+                            <a id="" href="{:U('Goods/extraedit',array('id'=>$data['id']))}" title="">编辑</a>
+                            |
+                            <a class="confirm ajax-get" href="{:U('Goods/extradel?id='.$data['id'])}" title="删除">删除</a>
+                        </td>
+                    </tr>
+                </volist>
+                <else/>
+				<td colspan="9" class="text-center"> aOh! 暂时还没有内容! </td>
+				</notempty>
+                </tbody>
+            </table></div>
+    <div class="page">
+        {$_page}
+    </div>
+    
+    <script type="text/javascript">
+    
+    $(function(){
+       
+      //搜索功能
+    	$("#search").click(function(){
+    		var url = $(this).attr('url');
+            var query  = $('.search-form').find('select').serialize();
+            query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
+            query = query.replace(/^&/g,'');
+            if( url.indexOf('?')>0 ){
+                url += '&' + query;
+            }else{
+                url += '?' + query;
+            }
+    		window.location.href = url;
+    	});
+    });
+  
+    
+</script>
+</block>
+     
+

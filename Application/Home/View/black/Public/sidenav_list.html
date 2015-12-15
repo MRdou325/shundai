@@ -1,0 +1,14 @@
+<div id="side">
+<notempty name="nav">
+	<volist name="nav" id="nav">
+	    <php>if($nav['pid'] == 0 && $nav['side'] == 1){</php>
+	        <div>
+	            <a id="nav-{$nav.id}"  href="{$nav.url|get_nav_url}" target="<eq name='nav.target' value='1'>_blank<else/>_self</eq>">{$nav.title}</a>
+	        </div>
+	    <php>}</php>
+	</volist>
+</notempty>
+<h2>联系电话</h2>
+<div>{:C('WEB_SITE_TEL')}</div>
+</div>
+
