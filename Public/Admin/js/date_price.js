@@ -62,10 +62,10 @@ $(function(){
         if(price == 0){
             return true;
         }
-        if(youhui_price > price){
-            alert_fail('优惠价不能高过市场价～');
-            return false;
-        }
+        // if(youhui_price > price){
+        //     alert_fail('优惠价不能高过市场价～');
+        //     return false;
+        // }
         return true;
     }
     //批量操作栏事件绑定
